@@ -1,6 +1,6 @@
 #!/usr/bin/python
-from Tkinter import *
-import ttk
+from tkinter import *
+import tkinter.ttk
 import os
 import csv
 import datetime
@@ -9,6 +9,7 @@ from tkinter import *
 from tkinter.ttk import Progressbar
 from tkinter import ttk
 from tkinter import filedialog
+from tkinter import messagebox
 
 
 def BrowseClicked():
@@ -20,64 +21,67 @@ def BrowseClicked():
 
 def csvformatter():
     bar['value'] = 0
-    file = open(os.path.join(os.getcwd(),filename.get()))
-    outpath = os.path.join(os.getcwd(),outpname.get())
-    reader = csv.reader(file)
-    x = 1
-    if(olm_state.get()):
-        for i, row in enumerate(reader):
-            if i == 8:
-                length = int(len(row[0].split())) - 1
-                writer = csv.writer(open(outpath, "w"), delimiter = ',', lineterminator='\n')
-                header = ['year','day','hour']
-                header.extend(list(range(1,length)))
-                writer.writerow(header)
-            if i==9:
-                new_row = []
-                if x == 1:
-                    for j in range(1,len(filter(None,str(row).split(" "))[2:]) + 1):
-                        new_row.append("Rec " + str(j))
-                    loclist = pd.DataFrame(new_row)
+    try:
+        file = open(os.path.join(os.getcwd(),filename.get()))
+        outpath = os.path.join(os.getcwd(),outpname.get())
+        reader = csv.reader(file)
+        x = 1
+        if(olm_state.get()):
+            for i, row in enumerate(reader):
+                if i == 8:
+                    length = int(len(row[0].split())) - 1
+                    writer = csv.writer(open(outpath, "w"), delimiter = ',', lineterminator='\n')
+                    header = ['year','day','hour']
+                    header.extend(list(range(1,length)))
+                    writer.writerow(header)
+                if i==9:
                     new_row = []
-                    x = 0
-                for j in filter(None,str(row).split(" "))[2:]:
-                    new_row.append(float(j.strip("']")))
-                loclist['x'] = new_row
-            if i==10:
-                new_row = []
-                for j in filter(None,str(row).split(" "))[2:]:
-                    new_row.append(float(j.strip("']")))
-                loclist['y'] = new_row
-                locname = filename.get() + "_Locations.csv"
-                loclist.to_csv(locname)
+                    if x == 1:
+                        for j in range(1,len(filter(None,str(row).split(" "))[2:]) + 1):
+                            new_row.append("Rec " + str(j))
+                        loclist = pd.DataFrame(new_row)
+                        new_row = []
+                        x = 0
+                    for j in filter(None,str(row).split(" "))[2:]:
+                        new_row.append(float(j.strip("']")))
+                    loclist['x'] = new_row
+                if i==10:
+                    new_row = []
+                    for j in filter(None,str(row).split(" "))[2:]:
+                        new_row.append(float(j.strip("']")))
+                    loclist['y'] = new_row
+                    locname = filename.get() + "_Locations.csv"
+                    loclist.to_csv(locname)
 
-            if i>15 and row[0] is not "":
-                year = row[0].split()[0]
-                day = row[0].split()[1]
-                hour = row[0].split()[2]
-                columns = []
-                new_row = [year,day,hour]
-                length = int(len(row[0].split()))
-                for j in range(3,length):
-                    value = float(row[0].split()[j])
-                    if value is not "":
-                        #value = (value*initial + min(0.9*value,(46/48)*ozone))
-                        columns.append(value)
-                new_row.extend(columns)
-                writer = csv.writer(open(outpath, "a+"), delimiter = ',', lineterminator='\n')
-                writer.writerow(new_row)
-                bar['value'] += 0.2739726027397260273972602739726
-                page1.update()
-    else:
-        txt_file = filename.get()
-        csv_file = outpath
-        in_txt = csv.reader(open(txt_file, "rb"), delimiter = '\t')
-        out_csv = csv.writer(open(outpath, 'wb'))
-        out_csv.writerows(in_txt)
-        bar['value'] = 100
-        page1.update()
-        processname.delete(0,END)
-        processname.insert(0,outpname.get())
+                if i>15 and row[0] is not "":
+                    year = row[0].split()[0]
+                    day = row[0].split()[1]
+                    hour = row[0].split()[2]
+                    columns = []
+                    new_row = [year,day,hour]
+                    length = int(len(row[0].split()))
+                    for j in range(3,length):
+                        value = float(row[0].split()[j])
+                        if value is not "":
+                            #value = (value*initial + min(0.9*value,(46/48)*ozone))
+                            columns.append(value)
+                    new_row.extend(columns)
+                    writer = csv.writer(open(outpath, "a+"), delimiter = ',', lineterminator='\n')
+                    writer.writerow(new_row)
+                    bar['value'] += 0.2739726027397260273972602739726
+                    page1.update()
+        else:
+            txt_file = filename.get()
+            csv_file = outpath
+            in_txt = csv.reader(open(txt_file, "rb"), delimiter = '\t')
+            out_csv = csv.writer(open(outpath, 'wb'))
+            out_csv.writerows(in_txt)
+            bar['value'] = 100
+            page1.update()
+            processname.delete(0,END)
+            processname.insert(0,outpname.get())
+    except OSError:
+        messagebox.showerror("File Not Found","File not found, please specify file to format")
 
 def browseback():
     backname.delete(0,END)
@@ -96,28 +100,31 @@ def process():
     exceed = float(exceednum.get())
     backpath = os.path.join(os.getcwd(),backname.get())
     outpath = os.path.join(os.getcwd(),processname.get())
-    background = pd.read_csv(backpath)
-    data = pd.read_csv(outpath,index_col=1)
+    try:
+        background = pd.read_csv(backpath)
+        data = pd.read_csv(outpath,index_col=1)
 
-    data['background'] = list(map(lambda x: float(x*0.9583333),background['Ozone']))
+        data['background'] = list(map(lambda x: float(x*0.9583333),background['Ozone']))
 
-    def test(row):
-        back = float(row[-1])
-        new_row = []
-        for value in row[2:-1]:
-            value = value*initial + min(0.9*value,back)
-            new_row.append(value)
-        return pd.Series(new_row)
+        def test(row):
+            back = float(row[-1])
+            new_row = []
+            for value in row[2:-1]:
+                value = value*initial + min(0.9*value,back)
+                new_row.append(value)
+            return pd.Series(new_row)
 
 
-    data = data.apply(test,axis=1)
+        data = data.apply(test,axis=1)
 
-    outdf = pd.DataFrame({  'Max of Sensor':data.max(),'Average of Sensor':data.mean(),
-                            'Number of Exceedances':data[data > exceed].count(),
-                            'Average Max Column':data.max().mean(),
-                            'Max Value':data.values.max()})
-    outdf.index.name = 'Sensor ID'
-    outdf.to_csv(outputstatname.get())
+        outdf = pd.DataFrame({  'Max of Sensor':data.max(),'Average of Sensor':data.mean(),
+                                'Number of Exceedances':data[data > exceed].count(),
+                                'Average Max Column':data.max().mean(),
+                                'Max Value':data.values.max()})
+        outdf.index.name = 'Sensor ID'
+        outdf.to_csv(outputstatname.get())
+    except OSError:
+        messagebox.showerror("File Not Found","File not found, please specify CSV and/or Background NO2 CSV")
 
 
 def _validate(self, P):
@@ -465,7 +472,10 @@ class Stitcher(Frame):
 
     def on_submit(self):
         self.table.get()
-        Stitcher(filesp,filesl,scalesl,headers,os.path.join(self.outf.get(),self.outp.get()))
+        try:
+            Stitcher(filesp,filesl,scalesl,headers,os.path.join(self.outf.get(),self.outp.get()))
+        except TypeError:
+            messagebox.showerror("Incorrect Settings","Incorrect settings, please review input table for errors")
 
     def askopenfile(self):
         filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
@@ -477,17 +487,20 @@ class Stitcher(Frame):
 
     def importcsv(self):
         colnames = ['filepath','filename','scale','headers']
-        filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
-        files = pd.read_csv(filenamep)
-        files = files.loc[:,~files.columns.str.contains('^Unnamed')]
-        files.columns = colnames
-        folders = files.filepath.tolist()
-        filesl = files.filename.tolist()
-        scales = files.scale.tolist()
-        headers = files.headers.tolist()
-        for folder,filename, scale, header in zip(folders,filesl,scales,headers):
-            self.table.addrow()
-            self.table.addsettings(folder,filename, scale, header)
+        try:
+            filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
+            files = pd.read_csv(filenamep)
+            files = files.loc[:,~files.columns.str.contains('^Unnamed')]
+            files.columns = colnames
+            folders = files.filepath.tolist()
+            filesl = files.filename.tolist()
+            scales = files.scale.tolist()
+            headers = files.headers.tolist()
+            for folder,filename, scale, header in zip(folders,filesl,scales,headers):
+                self.table.addrow()
+                self.table.addsettings(folder,filename, scale, header)
+        except FileNotFoundError:
+            messagebox.showerror("File Not Found","Please specify file")
 
     def clearset(self):
         self.table.clear()
@@ -559,15 +572,18 @@ class Factorizer(Frame):
 
     def importcsv(self):
         colnames = ['filename','factors']
-        filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
-        files = pd.read_csv(filenamep)
-        files = files.loc[:,~files.columns.str.contains('^Unnamed')]
-        files.columns = colnames
-        filesl = files.filename.tolist()
-        factors = files.factors.tolist()
-        for filename, factor in zip(filesl,factors):
-            self.table.addrow()
-            self.table.addfactors(filename, factor)
+        try:
+            filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
+            files = pd.read_csv(filenamep)
+            files = files.loc[:,~files.columns.str.contains('^Unnamed')]
+            files.columns = colnames
+            filesl = files.filename.tolist()
+            factors = files.factors.tolist()
+            for filename, factor in zip(filesl,factors):
+                self.table.addrow()
+                self.table.addfactors(filename, factor)
+        except FileNotFoundError:
+            messagebox.showerror("File Not Found","Please specify file")
 
     def clearset(self):
         self.table.clear()
@@ -673,15 +689,18 @@ class MassCSV(Frame):
 
     def importcsv(self):
         colnames = ['filename','OLM']
-        filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
-        files = pd.read_csv(filenamep)
-        files = files.loc[:,~files.columns.str.contains('^Unnamed')]
-        files.columns = colnames
-        filesl = files.filename.tolist()
-        olms = files.OLM.tolist()
-        for filename, olm in zip(filesl,olms):
-            self.table.addrow()
-            self.table.addcsvs(filename, olm)
+        try:
+            filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
+            files = pd.read_csv(filenamep)
+            files = files.loc[:,~files.columns.str.contains('^Unnamed')]
+            files.columns = colnames
+            filesl = files.filename.tolist()
+            olms = files.OLM.tolist()
+            for filename, olm in zip(filesl,olms):
+                self.table.addrow()
+                self.table.addcsvs(filename, olm)
+        except FileNotFoundError:
+            messagebox.showerror("File Not Found","Please specify file")
 
     def clearset(self):
         self.table.clear()
