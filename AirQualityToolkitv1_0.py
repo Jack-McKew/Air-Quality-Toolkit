@@ -238,6 +238,7 @@ def Stitcher(folders,filename,scale,headerz,outp):
     x = 1
     for folder, filename, scale, header in zip(folders,filename,scale,headerz):
         filename = os.path.join(folder,filename)
+        filename = filename.replace('\\','/')
         print("Processing: " + filename + " Scale: " + scale + " Header: " + header)
         try:
             float(scale)
@@ -250,32 +251,44 @@ def Stitcher(folders,filename,scale,headerz,outp):
             print("Invalid Scale for: " + filename + " Header: " + header + " is not a number")
             continue
         headlen = int(header)
-        data = pd.read_csv(filename,index_col=0)
-        data = data.loc[:,~data.columns.str.contains('^Unnamed')]
-        data = data.dropna()
-        data.update(data.iloc[:,headlen:].astype(float).multiply((float(scale))))
-        if x == 1:
-            dataout = data
-            x += 1
-        else:
-            dataout.update(dataout.iloc[:,headlen:].add(data.iloc[:,headlen:]))
-    dataout.to_csv(outp)
-    print("Complete: File Path " + str(outp))
+        try:
+            data = pd.read_csv(filename,index_col=0)
+            data = data.loc[:,~data.columns.str.contains('^Unnamed')]
+            data = data.dropna()
+            data.update(data.iloc[:,headlen:].astype(float).multiply((float(scale))))
+            if x == 1:
+                dataout = data
+                x += 1
+            else:
+                dataout.update(dataout.iloc[:,headlen:].add(data.iloc[:,headlen:]))
+        except:
+            messagebox.showerror("File Not Found","File not found, please specify file \nFile not found: " + filename)
+    try:
+        dataout.to_csv(outp)
+        print("Complete: File Path " + str(outp))
+        messagebox.showinfo("Complete","File Path: " + str(outp))
+    except UnboundLocalError:
+        messagebox.showwarning("Output Data Empty","Output dataset empty, please check input datasets")
+    except OSError:
+        messagebox.showerror("Output Data Name","Invalid output dataset filename, please specify output dataset name")
 
 
 class SimpleTableInput(Frame):
-    def __init__(self, parent, rows, columns):
+    def __init__(self, parent, rows, columns,labels):
         Frame.__init__(self, parent)
         self._entry = {}
         self.rows = rows
 
         self.columns = columns
-
         # register a command to use for validation
         vcmd = (self.register(self._validate), "%P")
-
+        column = 0
+        for labelname in labels:
+            lbl = Label(self,text=labelname)
+            lbl.grid(row=0,column=column)
+            column += 1
         # create the table of widgets
-        for row in range(self.rows):
+        for row in range(1,self.rows+1):
             for column in range(self.columns):
                 index = (row, column)
                 e = Entry(self)
@@ -293,7 +306,7 @@ class SimpleTableInput(Frame):
         scalesl[:] = []
         headers[:] = []
         '''Return a list of lists, containing the data in the table'''
-        for row in range(self.rows):
+        for row in range(1,self.rows):
             for column in range(self.columns):
                 index = (row, column)
                 if column == 0:
@@ -310,11 +323,12 @@ class SimpleTableInput(Frame):
                         headers.append(self._entry[index].get())
                 #current_row.append(self._entry[index].get())
         return filesl
+
     def getcsvs(self):
         csvsl[:] = []
         olmsl[:] = []
         '''Return a list of lists, containing the data in the table'''
-        for row in range(self.rows):
+        for row in range(1,self.rows):
             for column in range(self.columns):
                 index = (row, column)
                 if column == 0:
@@ -329,7 +343,7 @@ class SimpleTableInput(Frame):
         factorfilesl[:] = []
         factorsl[:] = []
         '''Return a list of lists, containing the data in the table'''
-        for row in range(self.rows):
+        for row in range(1,self.rows):
             for column in range(self.columns):
                 index = (row, column)
                 if column == 0:
@@ -341,7 +355,7 @@ class SimpleTableInput(Frame):
                 #current_row.append(self._entry[index].get())
 
     def addname(self,name):
-        for row in range(self.rows+1):
+        for row in range(1,self.rows+1):
             index = (row,0)
             if len(self._entry[index].get()) == 0:
                 folname = os.path.split(name)[0]
@@ -353,7 +367,7 @@ class SimpleTableInput(Frame):
                 return
 
     def addfactor(self,name):
-        for row in range(self.rows+1):
+        for row in range(1,self.rows+1):
             index = (row,0)
             if len(self._entry[index].get()) == 0:
                 self._entry[index].insert(0,name)
@@ -364,7 +378,7 @@ class SimpleTableInput(Frame):
                 return
 
     def addcsv(self,name):
-        for row in range(self.rows+1):
+        for row in range(1,self.rows+1):
             index = (row,0)
             if len(self._entry[index].get()) == 0:
                 self._entry[index].insert(0,name)
@@ -376,7 +390,7 @@ class SimpleTableInput(Frame):
 
     def addsettings(self,folder,filename,scale,header):
         folder = folder.replace('\\','/')
-        for row in range(self.rows+1):
+        for row in range(1,self.rows+1):
             index = (row,0)
             if len(self._entry[index].get()) == 0:
                 self._entry[index].insert(0,folder)
@@ -389,7 +403,7 @@ class SimpleTableInput(Frame):
                 return
 
     def addfactors(self,filename,factor):
-        for row in range(self.rows+1):
+        for row in range(1,self.rows+1):
             index = (row,0)
             if len(self._entry[index].get()) == 0:
                 self._entry[index].insert(0,filename)
@@ -401,7 +415,7 @@ class SimpleTableInput(Frame):
                 return
 
     def addcsvs(self,filename,olmz):
-        for row in range(self.rows+1):
+        for row in range(1,self.rows+1):
             index = (row,0)
             if len(self._entry[index].get()) == 0:
                 self._entry[index].insert(0,filename)
@@ -422,7 +436,7 @@ class SimpleTableInput(Frame):
                 self._entry[index] = e
 
     def clear(self):
-        for row in range(self.rows):
+        for row in range(1,self.rows):
             for column in range(self.columns):
                 index = (row, column)
                 self._entry[index].delete(0,'end')
@@ -443,11 +457,10 @@ class SimpleTableInput(Frame):
             return False
         return True
 
-class Stitcher(Frame):
+class StitcherFrame(Frame):
     def __init__(self, parent):
         Frame.__init__(self, parent)
-        self.table = SimpleTableInput(self, 1,4)
-        self.hdrlbl = Label(self,text="Folder                              Filename                                  Scale                                          Columns to exclude")
+        self.table = SimpleTableInput(self,1,4,["Folder","Filename","Scale","Columns To Exclude"])
         self.submit = Button(self, text="Stitch", command=self.on_submit)
         self.file = Button(self, text='Browse', command=self.askopenfile)
         self.importe = Button(self, text='Import Settings CSV', command=self.importcsv)
@@ -455,7 +468,6 @@ class Stitcher(Frame):
         self.addr = Button(self, text='Add Row', command=self.addrow)
         self.outf = Entry(self)
         self.outp = Entry(self, text='output.csv')
-        self.hdrlbl.pack(side="top",fill="both")
         self.table.pack(side="top", fill="both", expand=True)
         self.file.pack(side="left",fill="both",expand=True)
         self.importe.pack(side="left",fill="both",expand=True)
@@ -476,6 +488,7 @@ class Stitcher(Frame):
             Stitcher(filesp,filesl,scalesl,headers,os.path.join(self.outf.get(),self.outp.get()))
         except TypeError:
             messagebox.showerror("Incorrect Settings","Incorrect settings, please review input table for errors")
+            raise
 
     def askopenfile(self):
         filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
@@ -491,21 +504,24 @@ class Stitcher(Frame):
             filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
             files = pd.read_csv(filenamep)
             files = files.loc[:,~files.columns.str.contains('^Unnamed')]
-            files.columns = colnames
-            folders = files.filepath.tolist()
-            filesl = files.filename.tolist()
-            scales = files.scale.tolist()
-            headers = files.headers.tolist()
-            for folder,filename, scale, header in zip(folders,filesl,scales,headers):
-                self.table.addrow()
-                self.table.addsettings(folder,filename, scale, header)
+            try:
+                files.columns = colnames
+                folders = files.filepath.tolist()
+                filesl = files.filename.tolist()
+                scales = files.scale.tolist()
+                headers = files.headers.tolist()
+                for folder,filename, scale, header in zip(folders,filesl,scales,headers):
+                    self.table.addsettings(folder,filename, scale, header)
+                    self.table.addrow()
+            except ValueError:
+                messagebox.showerror("CSV Format Incompatible","Format of settings file is incompatible, refer to how-to on format required\n FORMAT: [Folder,Filename,Scale,Header]")
         except FileNotFoundError:
             messagebox.showerror("File Not Found","Please specify file")
 
     def clearset(self):
         self.table.clear()
 
-Stitcher(page2).pack(side="top", fill="both", expand=True)
+StitcherFrame(page2).pack(side="top", fill="both", expand=True)
 
 
 page3 = ttk.Frame(nb)
@@ -539,14 +555,12 @@ def factorize(factorsname,inputname):
 class Factorizer(Frame):
     def __init__(self, parent):
         Frame.__init__(self, parent)
-        self.table = SimpleTableInput(self, 1,3)
-        self.hdrlbl = Label(self,text="Filename                              Factor                                                   Output Filename")
+        self.table = SimpleTableInput(self, 1,3,["Filename","Factor","Output Filename"])
         self.submit = Button(self, text="Factorize", command=self.on_submit)
         self.file = Button(self, text='Browse', command=self.askopenfile)
         self.importe = Button(self, text='Import Settings CSV', command=self.importcsv)
         self.clear = Button(self, text='Clear', command=self.clearset)
         self.addr = Button(self, text='Add Row', command=self.addrow)
-        self.hdrlbl.pack(side="top",fill="both")
         self.table.pack(side="top", fill="both", expand=True)
         self.file.pack(side="left",fill="both",expand=True)
         self.importe.pack(side="left",fill="both",expand=True)
@@ -655,21 +669,17 @@ def masscsvformatter(filename,olm):
 class MassCSV(Frame):
     def __init__(self, parent):
         Frame.__init__(self, parent)
-        self.table = SimpleTableInput(self, 1,3)
-        self.hdrlbl = Label(self,text="Filename                              OLM? (0/1)                      Output Filename")
+        self.table = SimpleTableInput(self, 1,3,["Filename","OLM (0/1)","Output Filename"])
         self.submit = Button(self, text="Convert", command=self.on_submit)
         self.file = Button(self, text='Browse', command=self.askopenfile)
         self.importe = Button(self, text='Import Settings CSV', command=self.importcsv)
         self.clear = Button(self, text='Clear', command=self.clearset)
         self.addr = Button(self, text='Add Row', command=self.addrow)
-        self.hdrlbl.pack(side="top",fill="both")
         self.table.pack(side="top", fill="both", expand=True)
         self.file.pack(side="left",fill="both",expand=True)
         self.importe.pack(side="left",fill="both",expand=True)
         self.clear.pack(side="left",fill="both",expand=True)
         self.submit.pack(side="left",fill="both",expand=True)
-
-
 
     def addrow(self):
         self.table.addrow()
@@ -701,6 +711,7 @@ class MassCSV(Frame):
                 self.table.addcsvs(filename, olm)
         except FileNotFoundError:
             messagebox.showerror("File Not Found","Please specify file")
+
 
     def clearset(self):
         self.table.clear()
