@@ -1,4 +1,8 @@
-#!/usr/bin/python
+""" Air Quality Toolkit
+.. moduleauthor:: Jack McKew <jack.mckew@aecom.com>
+
+
+"""
 from tkinter import *
 import tkinter.ttk
 import os
@@ -10,6 +14,8 @@ from tkinter.ttk import Progressbar
 from tkinter import ttk
 from tkinter import filedialog
 from tkinter import messagebox
+
+from StitcherFunctions import *
 
 
 def BrowseClicked():
@@ -26,6 +32,7 @@ def csvformatter():
         outpath = os.path.join(os.getcwd(),outpname.get())
         reader = csv.reader(file)
         x = 1
+        # TODO Optimize using next()
         if(olm_state.get()):
             for i, row in enumerate(reader):
                 if i == 8:
@@ -234,43 +241,6 @@ filesp = []
 scalesl = []
 headers = []
 
-def Stitcher(folders,filename,scale,headerz,outp):
-    x = 1
-    for folder, filename, scale, header in zip(folders,filename,scale,headerz):
-        filename = os.path.join(folder,filename)
-        filename = filename.replace('\\','/')
-        print("Processing: " + filename + " Scale: " + scale + " Header: " + header)
-        try:
-            float(scale)
-        except ValueError:
-            print("Invalid Scale for: " + filename + " Scale: " + scale + " is not a number")
-            continue
-        try:
-            int(header)
-        except ValueError:
-            print("Invalid Scale for: " + filename + " Header: " + header + " is not a number")
-            continue
-        headlen = int(header)
-        try:
-            data = pd.read_csv(filename,index_col=0)
-            data = data.loc[:,~data.columns.str.contains('^Unnamed')]
-            data = data.dropna()
-            data.update(data.iloc[:,headlen:].astype(float).multiply((float(scale))))
-            if x == 1:
-                dataout = data
-                x += 1
-            else:
-                dataout.update(dataout.iloc[:,headlen:].add(data.iloc[:,headlen:]))
-        except:
-            messagebox.showerror("File Not Found","File not found, please specify file \nFile not found: " + filename)
-    try:
-        dataout.to_csv(outp)
-        print("Complete: File Path " + str(outp))
-        messagebox.showinfo("Complete","File Path: " + str(outp))
-    except UnboundLocalError:
-        messagebox.showwarning("Output Data Empty","Output dataset empty, please check input datasets")
-    except OSError:
-        messagebox.showerror("Output Data Name","Invalid output dataset filename, please specify output dataset name")
 
 
 class SimpleTableInput(Frame):
@@ -430,16 +400,24 @@ class SimpleTableInput(Frame):
         self.rows += 1
         vcmd = (self.register(self._validate), "%P")
         for column in range(self.columns):
-                index = (self.rows-1, column)
+                index = (self.rows, column)
                 e = Entry(self)
                 e.grid(row=self.rows, column=column, stick="nsew")
                 self._entry[index] = e
 
     def clear(self):
-        for row in range(1,self.rows):
+        destroyed = 0
+        for row in range(1,self.rows+1):
             for column in range(self.columns):
                 index = (row, column)
-                self._entry[index].delete(0,'end')
+                if(row == 1):
+                    self._entry[index].delete(0,'end')
+                else:
+                    self._entry[index].destroy()
+                    destroyed = 1
+            if(destroyed):
+                self.rows -= 1
+                destroyed = 0
 
 
     def _validate(self, P):
