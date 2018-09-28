@@ -79,7 +79,9 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to Air Quality Toolkit’s documentation!</a></li>
-<li><a class="reference internal" href="#module-StitcherFunctions">Stitcher Functions</a></li>
+<li><a class="reference internal" href="#module-Stitcher">Stitcher</a></li>
+<li><a class="reference internal" href="#module-CSVFormatter">CSV Formatter</a></li>
+<li><a class="reference internal" href="#module-Factorizer">Factorizer</a></li>
 </ul>
 </div>
             
@@ -149,22 +151,22 @@
 <div class="toctree-wrapper compound">
 </div>
 </div>
-<div class="section" id="module-StitcherFunctions">
-<span id="stitcher-functions"></span><h1>Stitcher Functions<a class="headerlink" href="#module-StitcherFunctions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-Stitcher">
+<span id="stitcher"></span><h1>Stitcher<a class="headerlink" href="#module-Stitcher" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="StitcherFunctions.Stitcher">
-<code class="descclassname">StitcherFunctions.</code><code class="descname">Stitcher</code><span class="sig-paren">(</span><em>folders</em>, <em>filename</em>, <em>scale</em>, <em>headerz</em>, <em>outp</em><span class="sig-paren">)</span><a class="headerlink" href="#StitcherFunctions.Stitcher" title="Permalink to this definition">¶</a></dt>
+<dt id="Stitcher.Stitcher">
+<code class="descclassname">Stitcher.</code><code class="descname">Stitcher</code><span class="sig-paren">(</span><em>filepath_list</em>, <em>filename</em>, <em>scale</em>, <em>headers_list</em>, <em>output_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#Stitcher.Stitcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function sums multiple dataframes together and outputs a csv of the result.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>folders</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>]</em><em></em>) – This should be a list of filepaths to assosciated filename list.</li>
-<li><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>]</em><em></em>) – This should be a list of filenames to assosciated filepath (folders) list.</li>
+<li><strong>filepath_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>]</em><em></em>) – This should be a list of filepaths to assosciated filename list.</li>
+<li><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>]</em><em></em>) – This should be a list of filenames to assosciated filepath (filepath_list) list.</li>
 <li><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>]</em><em></em>) – This should be a list of scalars to scale assosicated filename dataframe by.</li>
-<li><strong>headerz</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>]</em><em></em>) – This should be a list of numbers to exclude number of columns from dataframes.</li>
-<li><strong>outp</strong> – Output filename.</li>
+<li><strong>headers_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>]</em><em></em>) – This should be a list of numbers to exclude number of columns from dataframes.</li>
+<li><strong>output_filename</strong> (<em>str.</em>) – Output filename.</li>
 </ul>
 </td>
 </tr>
@@ -172,9 +174,66 @@
 </table>
 </dd></dl>
 
-<ul class="simple">
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</div>
+<div class="section" id="module-CSVFormatter">
+<span id="csv-formatter"></span><h1>CSV Formatter<a class="headerlink" href="#module-CSVFormatter" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="CSVFormatter.csvformatter">
+<code class="descclassname">CSVFormatter.</code><code class="descname">csvformatter</code><span class="sig-paren">(</span><em>filename</em>, <em>olm_state</em>, <em>output_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#CSVFormatter.csvformatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function formats dataset outputs from air quality modelling software to CSV format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>str.</em>) – This should be a string of the filename to convert to CSV.</li>
+<li><strong>olm_state</strong> (<em>bool.</em>) – This should be a boolean value specifying if the file is OLM format (x and y information header).</li>
+<li><strong>output_filename</strong> (<em>str.</em>) – Output filename.</li>
 </ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Factorizer">
+<span id="factorizer"></span><h1>Factorizer<a class="headerlink" href="#module-Factorizer" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="Factorizer.calcrow">
+<code class="descclassname">Factorizer.</code><code class="descname">calcrow</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#Factorizer.calcrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used for multiplying entire pandas dataframe single row by scalar value located in the last column of the dataframe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>row</strong> (<em>float.</em>) – This should be the slice from the pandas dataframe.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">pd.Series – The row multiplied by the scalar in the last column of the row</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Factorizer.factorizer">
+<code class="descclassname">Factorizer.</code><code class="descname">factorizer</code><span class="sig-paren">(</span><em>dataset_filename</em>, <em>factor_filename</em>, <em>output_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#Factorizer.factorizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function mutiplies air quality datasets with vectors given.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dataset_filename</strong> (<em>str.</em>) – This should be a string of the filename containing the dataset.</li>
+<li><strong>factor_filename</strong> (<em>str.</em>) – This should be a string of the filename containing the vector dataset to mutiply with.</li>
+<li><strong>output_filename</strong> (<em>str.</em>) – Output filename.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 

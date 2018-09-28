@@ -10,10 +10,20 @@ Welcome to Air Quality Toolkit's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-Stitcher Functions
-==================
+Stitcher
+========
 
-.. automodule:: StitcherFunctions
+.. automodule:: Stitcher
    :members:
 
-* :ref:`search`
+CSV Formatter
+=============
+
+.. automodule:: CSVFormatter
+   :members:
+
+Factorizer
+==========
+
+.. automodule:: Factorizer
+   :members:
