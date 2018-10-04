@@ -50,11 +50,13 @@ def csvformatter(filename,olm_state,output_filename):
             in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
             if "Output" in next(in_txt)[0]:
                 messagebox.showerror("Possibly OLM Format","Please ensure this file has no header information")
+                raise
             else:
                 out_csv = csv.writer(open(outpath, 'w'))
                 out_csv.writerows(in_txt)
     except OSError:
         messagebox.showerror("File Not Found","File not found, please specify file to format")
+        raise
 
 
 

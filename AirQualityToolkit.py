@@ -18,6 +18,8 @@ from tkinter import messagebox
 from CSVFormatter import *
 from Stitcher import *
 from Factorizer import *
+from Processor import *
+
 
 def BrowseClicked():
     filename.delete(0,'end')
@@ -25,6 +27,14 @@ def BrowseClicked():
     file = filedialog.askopenfilename(filetypes = (("Dat files","*.dat"),("Text files","*.txt"),("all files","*.*")))
     filename.insert(0,os.path.split(file)[1])
     outpname.insert(0,os.path.split(file)[1].split('.')[0] + ".csv")
+
+def processClicked():
+    try:
+        process(headernum.get(),initialnum.get(),exceednum.get(),backname.get(),processname.get(),outputstatname.get())
+
+    except:
+        messagebox.showerror("Error","An error has occured while processing")
+        raise
 
 
 def browseback():
@@ -45,36 +55,6 @@ def browseout():
     processname.insert(0,os.path.split(file)[1])
     outputstatname.insert(0,os.path.split(file)[1].split('.')[0] + "_Statistics.csv")
 
-def process():
-    initial = float(initialnum.get())
-    exceed = float(exceednum.get())
-    backpath = os.path.join(os.getcwd(),backname.get())
-    outpath = os.path.join(os.getcwd(),processname.get())
-    try:
-        background = pd.read_csv(backpath)
-        data = pd.read_csv(outpath,index_col=1)
-
-        data['background'] = list(map(lambda x: float(x*0.9583333),background['Ozone']))
-
-        def test(row):
-            back = float(row[-1])
-            new_row = []
-            for value in row[2:-1]:
-                value = value*initial + min(0.9*value,back)
-                new_row.append(value)
-            return pd.Series(new_row)
-
-
-        data = data.apply(test,axis=1)
-
-        outdf = pd.DataFrame({  'Max of Sensor':data.max(),'Average of Sensor':data.mean(),
-                                'Number of Exceedances':data[data > exceed].count(),
-                                'Average Max Column':data.max().mean(),
-                                'Max Value':data.values.max()})
-        outdf.index.name = 'Sensor ID'
-        outdf.to_csv(outputstatname.get())
-    except OSError:
-        messagebox.showerror("File Not Found","File not found, please specify CSV and/or Background NO2 CSV")
 
 
 def _validate(self, P):
@@ -94,7 +74,7 @@ def _validate(self, P):
 
 main = Tk()
 main.title('Air Quality Toolset')
-main.geometry('800x300')
+main.geometry('800x350')
 
 # gives weight to the cells in the grid
 rows = 0
@@ -108,15 +88,12 @@ nb = ttk.Notebook(main)
 nb.grid(row=1, column=0, columnspan=50, rowspan=49, sticky='NESW')
 
 # Adds tab 1 of the notebook
-gui_style = ttk.Style()
-gui_style.configure('My.TButton', foreground='red')
-gui_style.configure('My.TFrame', background='pink')
-page1 = ttk.Frame(nb,style='My.TFrame')
+# gui_style = ttk.Style()
+# gui_style.configure('My.TButton', foreground='red')
+# gui_style.configure('My.TFrame', background='yellow')
+
+page1 = ttk.Frame(nb)
 nb.add(page1, text='NO2 Processor')
-style = ttk.Style()
-style.theme_use('default')
-style.configure("black.Horizontal.TProgressbar", background='green')
-# bar = Progressbar(page1, length=200, style='black.Horizontal.TProgressbar')
 
 olm_state = IntVar()
 olm_state.set(0)
@@ -125,7 +102,7 @@ inputlbl = Label(page1,text="File to format as CSV: ")
 filename = Entry(page1,width=40)
 outputlbl = Label(page1,text="File name of output CSV: ")
 outpname = Entry(page1,width=40)
-olm = Checkbutton(page1,text="OLM?",var=olm_state)
+olm = Checkbutton(page1,text="CALPUFF Output Format?",var=olm_state)
 processlbl= Label(page1,text="Filename of CSV to process: ")
 processname = Entry(page1,width=40)
 backlbl = Label(page1,text="File name of Background NO2 CSV: ")
@@ -136,6 +113,9 @@ initialnum.insert(0,"0.1")
 exceedlbl= Label(page1,text="Number of exceedances limit (eg 246): ")
 exceednum = Entry(page1,width=40)
 exceednum.insert(0,"246")
+headerlbl = Label(page1,text="Number of header columns in dataset (eg 3): ")
+headernum = Entry(page1,width=40)
+headernum.insert(0,"3")
 outputstatlbl= Label(page1,text="File name of output statistics CSV: ")
 outputstatname = Entry(page1,width=40)
 
@@ -147,7 +127,7 @@ browseout = Button(page1,text='Browse',command=browseout)
 browseout.config(width=20)
 browsecsv = Button(page1,text='Browse',command=browseback)
 browsecsv.config(width=20)
-processbtn = Button(page1,text='Process CSV',command=process)
+processbtn = Button(page1,text='Process CSV',command=processClicked)
 processbtn.config(width=20)
 
 inputlbl.grid(column=0,row=0)
@@ -157,7 +137,8 @@ processlbl.grid(column=0,row=3)
 backlbl.grid(column=0,row=4)
 initiallbl.grid(column=0,row=5)
 exceedlbl.grid(column=0,row=6)
-outputstatlbl.grid(column=0,row=7)
+headerlbl.grid(column=0,row=7)
+outputstatlbl.grid(column=0,row=8)
 
 
 filename.grid(column=1,row=0)
@@ -167,13 +148,14 @@ processname.grid(column=1,row=3)
 backname.grid(column=1,row=4)
 initialnum.grid(column=1,row=5)
 exceednum.grid(column=1,row=6)
-outputstatname.grid(column=1,row=7)
+headernum.grid(column=1,row=7)
+outputstatname.grid(column=1,row=8)
 
 browsebtn.grid(column=2,row=0)
 formatbtn.grid(column=2,row=1)
 browseout.grid(column=2,row=3)
 browsecsv.grid(column=2,row=4)
-processbtn.grid(column=2,row=7)
+processbtn.grid(column=2,row=8)
 
 
 # Adds tab 2 of the notebook
@@ -183,8 +165,6 @@ filesl = []
 filesp = []
 scalesl = []
 headers = []
-
-
 
 class SimpleTableInput(Frame):
     def __init__(self, parent, rows, columns,labels):
@@ -422,6 +402,7 @@ class StitcherFrame(Frame):
         filenamep = filedialog.askopenfilename(initialdir = os.getcwd(),title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
         try:
             self.table.addname(filenamep)
+            self.table.addrow()
         except KeyError:
             self.table.addrow()
             self.table.addname(filenamep)
@@ -521,11 +502,10 @@ csvsl = []
 olmsl = []
 outpsl = []
 
-
 class MassCSV(Frame):
     def __init__(self, parent):
         Frame.__init__(self, parent)
-        self.table = SimpleTableInput(self, 1,3,["Filename","OLM (0/1)","Output Filename"])
+        self.table = SimpleTableInput(self, 1,3,["Filename","CALPUFF Output Format? (0/1)","Output Filename"])
         self.submit = Button(self, text="Convert", command=self.on_submit)
         self.file = Button(self, text='Browse', command=self.askopenfile)
         self.importe = Button(self, text='Import Settings CSV', command=self.importcsv)
