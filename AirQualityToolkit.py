@@ -18,8 +18,8 @@ from tkinter import messagebox
 from CSVFormatter import *
 from Stitcher import *
 from Factorizer import *
-from Processor import *
-
+from NO2Processor import *
+from Statistics_Generator import *
 
 def BrowseClicked():
     filename.delete(0,'end')
@@ -555,5 +555,111 @@ class MassCSV(Frame):
         self.table.clear()
 
 MassCSV(page4).pack(side="top", fill="both", expand=True)
+
+page5 = ttk.Frame(nb)
+nb.add(page5,text="Statistics Generator")
+
+def browsestatclicked():
+    statname.delete(0,'end')
+    outputstat2name.delete(0,'end')
+    file = filedialog.askopenfilename(filetypes = (("CSV files","*.csv"),("all files","*.*")))
+    statname.insert(0,os.path.split(file)[1])
+    outputstat2name.insert(0,os.path.split(file)[1].split('.')[0] + "_Statistics.csv")
+
+def runstats():
+    settings = {}
+    settings['max_of_sensor'] = max_sens_state.get()
+    settings['mean'] = mean_state.get()
+    settings['max_mean'] = max_mean_state.get()
+    settings['max'] = max_state.get()
+    settings['percentile'] = percentile_state.get()
+    if percentile_state.get() == 1:
+        settings['percentile_value'] = float(percentilename.get()) / 100
+    settings['max_percentile'] = max_of_percentile.get()
+    settings['rolling'] = rolling_state.get()
+    if rolling_state.get() == 1:
+        settings['rolling_value'] = int(rollingname.get())
+    settings['max_rolling'] = rolling_max_state.get()
+    Statistics_Generator(settings,header2num.get(),statname.get(),outputstat2name.get())
+
+
+
+statlbl= Label(page5,text="Filename of CSV to process: ")
+statname = Entry(page5,width=40)
+header2lbl = Label(page5,text="Number of header columns in dataset (eg 3): ")
+header2num = Entry(page5,width=40)
+header2num.insert(0,"3")
+outputstat2lbl= Label(page5,text="File name of output statistics CSV: ")
+outputstat2name = Entry(page5,width=40)
+
+percentilelbl = Label(page5,text="Percentile to compute (eg 99.9): ")
+percentilename = Entry(page5,width=40)
+percentilename.insert(0,"99.9")
+
+rollinglbl = Label(page5,text="Rolling average window (eg 8): ")
+rollingname = Entry(page5,width=40)
+rollingname.insert(0,"8")
+
+settingslbl = Label(page5,text='Settings for Statistics Output')
+
+browsestatbtn = Button(page5,text="Browse",command=browsestatclicked)
+browsestatbtn.config(width=20)
+
+runstatsbtn = Button(page5,text="Run",command=runstats)
+runstatsbtn.config(width=20)
+
+mean_state = IntVar()
+mean_state.set(1)
+mean = Checkbutton(page5,text="Average of Sensor",var=mean_state)
+max_mean_state = IntVar()
+max_mean_state.set(1)
+max_mean = Checkbutton(page5,text="Max Average of Sensors",var=max_mean_state)
+max_sens_state = IntVar()
+max_sens_state.set(1)
+max_sens = Checkbutton(page5,text="Max of Sensor",var=max_sens_state)
+max_state = IntVar()
+max_state.set(1)
+maxbut = Checkbutton(page5,text="Max of All Sensors",var=max_state)
+percentile_state = IntVar()
+percentile_en = Checkbutton(page5,text="Enable Percentile",var=percentile_state)
+max_of_percentile = IntVar()
+max_of_percentile.set(0)
+max_percentile = Checkbutton(page5,text="Max of Percentile",var=max_of_percentile)
+
+rolling_state = IntVar()
+rolling_en = Checkbutton(page5,text="Enable Rolling",var=rolling_state)
+rolling_max_state = IntVar()
+rolling_max_en = Checkbutton(page5,text="Max of Rolling",var=rolling_max_state)
+
+olm.grid(column=0,row=2)
+
+
+statlbl.grid(column=0,row=0)
+header2lbl.grid(column=0,row=1)
+outputstat2lbl.grid(column=0,row=2)
+settingslbl.grid(column=1,row=3)
+percentilelbl.grid(column=0,row=6)
+rollinglbl.grid(column=0,row=8)
+
+statname.grid(column = 1,row = 0)
+header2num.grid(column= 1,row = 1)
+outputstat2name.grid(column=1,row=2)
+percentilename.grid(column=1,row=6)
+rollingname.grid(column=1,row=8)
+
+browsestatbtn.grid(column=2,row=0)
+runstatsbtn.grid(column=2,row=2)
+
+mean.grid(column=0,row = 4)
+max_mean.grid(column=1,row=4)
+maxbut.grid(column=2,row=4)
+max_sens.grid(column=0,row=5)
+percentile_en.grid(column=2,row=6)
+max_percentile.grid(column=2,row=7)
+rolling_en.grid(column=2,row=8)
+rolling_max_en.grid(column=2,row=9)
+
+
+
 
 main.mainloop()

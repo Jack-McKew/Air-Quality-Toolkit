@@ -13,17 +13,21 @@ from tkinter import messagebox
 """
 
 def process(header_length,initial,exceedance,background_name,input_data,output_filename):
-    """[summary]
+    """This function applies air quality modelling functions and generates statistics.
 
-    Arguments:
-        header_length {[type]} -- [description]
-        initial {[type]} -- [description]
-        exceedance {[type]} -- [description]
-        background_name {[type]} -- [description]
-        input_data {[type]} -- [description]
+    :param header_length: This should be an integer declaring how many header columns in the dataset
+    :type header_length: int.
+    :param initial: This should be an float declaring initial percentage to work with eg 0.1 = 10%
+    :type initial: float.
+    :param exceedance: This should be an integer declaring how many exceedances eg compare if any are greater than 246
+    :type exceedance: int.
+    :param background_name: This should be a string representing input background NO2 filename (Must be located in same directory as .exe).
+    :type background_name: str.
+    :param input_data: This should be a string representing input filename (Must be located in same directory as .exe).
+    :type input_data: str.
+    :param output_filename: Output filename.
+    :type output_filename: str.
 
-    Returns:
-        [type] -- [description]
     """
     header_length = int(header_length)
     initial = float(initial)
@@ -68,13 +72,11 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
         outdf.index.name = 'Sensor ID'
         outdf.to_csv(output_filename)
         messagebox.showinfo("Complete","Processing complete, file name is: " + output_filename)
-        messagebox.ask
         backquestion = messagebox.askyesno("Background NO2 statistics?","Would you like to process Background NO2 statistics?")
 
         if backquestion == True:
             data['background'] = list(background['Background NO2'])
             data = data.apply(backfunction,axis=1)
-            print(data)
             outdf = pd.DataFrame({  'Max of Sensor':data.max(),'Average of Sensor':data.mean(),
                                 'Number of Exceedances':data[data > exceedance].count(),
                                 'Average Max Column':data.max().mean(),

@@ -56,7 +56,7 @@
 
 
 \title{Air Quality Toolkit Documentation}
-\date{Sep 28, 2018}
+\date{Oct 05, 2018}
 \release{1}
 \author{Jack McKew}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -128,7 +128,7 @@ This function formats dataset outputs from air quality modelling software to CSV
 
 
 \chapter{Factorizer}
-\label{\detokenize{index:factorizer}}\label{\detokenize{index:module-Factorizer}}\index{Factorizer (module)}\index{calcrow() (in module Factorizer)}
+\label{\detokenize{index:module-Factorizer}}\label{\detokenize{index:factorizer}}\index{Factorizer (module)}\index{calcrow() (in module Factorizer)}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{index:Factorizer.calcrow}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Factorizer.}}\sphinxbfcode{\sphinxupquote{calcrow}}}{\emph{row}}{}
@@ -168,6 +168,68 @@ This function mutiplies air quality datasets with vectors given.
 
 
 
+\chapter{NO2Processor}
+\label{\detokenize{index:no2processor}}\label{\detokenize{index:module-NO2Processor}}\index{NO2Processor (module)}\index{process() (in module NO2Processor)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{index:NO2Processor.process}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{NO2Processor.}}\sphinxbfcode{\sphinxupquote{process}}}{\emph{header\_length}, \emph{initial}, \emph{exceedance}, \emph{background\_name}, \emph{input\_data}, \emph{output\_filename}}{}
+This function applies air quality modelling functions and generates statistics.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{header\_length}} (\sphinxstyleliteralemphasis{\sphinxupquote{int.}}) \textendash{} This should be an integer declaring how many header columns in the dataset
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{initial}} (\sphinxstyleliteralemphasis{\sphinxupquote{float.}}) \textendash{} This should be an float declaring initial percentage to work with eg 0.1 = 10\%
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{exceedance}} (\sphinxstyleliteralemphasis{\sphinxupquote{int.}}) \textendash{} This should be an integer declaring how many exceedances eg compare if any are greater than 246
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{background\_name}} (\sphinxstyleliteralemphasis{\sphinxupquote{str.}}) \textendash{} This should be a string representing input background NO2 filename (Must be located in same directory as .exe).
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{input\_data}} (\sphinxstyleliteralemphasis{\sphinxupquote{str.}}) \textendash{} This should be a string representing input filename (Must be located in same directory as .exe).
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{output\_filename}} (\sphinxstyleliteralemphasis{\sphinxupquote{str.}}) \textendash{} Output filename.
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\chapter{Statistics Generator}
+\label{\detokenize{index:module-Statistics_Generator}}\label{\detokenize{index:statistics-generator}}\index{Statistics\_Generator (module)}\index{Statistics\_Generator() (in module Statistics\_Generator)}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{index:Statistics_Generator.Statistics_Generator}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Statistics\_Generator.}}\sphinxbfcode{\sphinxupquote{Statistics\_Generator}}}{\emph{settings}, \emph{header\_length}, \emph{input\_data}, \emph{output\_filename}}{}
+This function generates statistics on given input datasets.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{settings}} (\sphinxhref{https://docs.python.org/3/library/stdtypes.html\#dict}{\sphinxstyleliteralemphasis{\sphinxupquote{dict}}}\sphinxstyleliteralemphasis{\sphinxupquote{{[}}}\sphinxstyleliteralemphasis{\sphinxupquote{str:int}}\sphinxstyleliteralemphasis{\sphinxupquote{{]}}}\sphinxstyleliteralemphasis{\sphinxupquote{}}) \textendash{} This should be a dictionary of settings with their name as the key and state as value.
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{header\_length}} (\sphinxstyleliteralemphasis{\sphinxupquote{int.}}) \textendash{} This should be an integer declaring how many header columns in the dataset
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{input\_data}} (\sphinxstyleliteralemphasis{\sphinxupquote{str.}}) \textendash{} This should be a string representing input filename (Must be located in same directory as .exe).
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{output\_filename}} (\sphinxstyleliteralemphasis{\sphinxupquote{str.}}) \textendash{} Output filename.
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
 \renewcommand{\indexname}{Python Module Index}
 \begin{sphinxtheindex}
 \def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
@@ -177,7 +239,11 @@ This function mutiplies air quality datasets with vectors given.
 \bigletter{f}
 \item {\sphinxstyleindexentry{Factorizer}}\sphinxstyleindexpageref{index:\detokenize{module-Factorizer}}
 \indexspace
+\bigletter{n}
+\item {\sphinxstyleindexentry{NO2Processor}}\sphinxstyleindexpageref{index:\detokenize{module-NO2Processor}}
+\indexspace
 \bigletter{s}
+\item {\sphinxstyleindexentry{Statistics\_Generator}}\sphinxstyleindexpageref{index:\detokenize{module-Statistics_Generator}}
 \item {\sphinxstyleindexentry{Stitcher}}\sphinxstyleindexpageref{index:\detokenize{module-Stitcher}}
 \end{sphinxtheindex}
 

@@ -82,6 +82,8 @@
 <li><a class="reference internal" href="#module-Stitcher">Stitcher</a></li>
 <li><a class="reference internal" href="#module-CSVFormatter">CSV Formatter</a></li>
 <li><a class="reference internal" href="#module-Factorizer">Factorizer</a></li>
+<li><a class="reference internal" href="#module-NO2Processor">NO2Processor</a></li>
+<li><a class="reference internal" href="#module-Statistics_Generator">Statistics Generator</a></li>
 </ul>
 </div>
             
@@ -226,6 +228,54 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>dataset_filename</strong> (<em>str.</em>) – This should be a string of the filename containing the dataset.</li>
 <li><strong>factor_filename</strong> (<em>str.</em>) – This should be a string of the filename containing the vector dataset to mutiply with.</li>
+<li><strong>output_filename</strong> (<em>str.</em>) – Output filename.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-NO2Processor">
+<span id="no2processor"></span><h1>NO2Processor<a class="headerlink" href="#module-NO2Processor" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="NO2Processor.process">
+<code class="descclassname">NO2Processor.</code><code class="descname">process</code><span class="sig-paren">(</span><em>header_length</em>, <em>initial</em>, <em>exceedance</em>, <em>background_name</em>, <em>input_data</em>, <em>output_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#NO2Processor.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function applies air quality modelling functions and generates statistics.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>header_length</strong> (<em>int.</em>) – This should be an integer declaring how many header columns in the dataset</li>
+<li><strong>initial</strong> (<em>float.</em>) – This should be an float declaring initial percentage to work with eg 0.1 = 10%</li>
+<li><strong>exceedance</strong> (<em>int.</em>) – This should be an integer declaring how many exceedances eg compare if any are greater than 246</li>
+<li><strong>background_name</strong> (<em>str.</em>) – This should be a string representing input background NO2 filename (Must be located in same directory as .exe).</li>
+<li><strong>input_data</strong> (<em>str.</em>) – This should be a string representing input filename (Must be located in same directory as .exe).</li>
+<li><strong>output_filename</strong> (<em>str.</em>) – Output filename.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Statistics_Generator">
+<span id="statistics-generator"></span><h1>Statistics Generator<a class="headerlink" href="#module-Statistics_Generator" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="Statistics_Generator.Statistics_Generator">
+<code class="descclassname">Statistics_Generator.</code><code class="descname">Statistics_Generator</code><span class="sig-paren">(</span><em>settings</em>, <em>header_length</em>, <em>input_data</em>, <em>output_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#Statistics_Generator.Statistics_Generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function generates statistics on given input datasets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>settings</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a><em>[</em><em>str:int</em><em>]</em><em></em>) – This should be a dictionary of settings with their name as the key and state as value.</li>
+<li><strong>header_length</strong> (<em>int.</em>) – This should be an integer declaring how many header columns in the dataset</li>
+<li><strong>input_data</strong> (<em>str.</em>) – This should be a string representing input filename (Must be located in same directory as .exe).</li>
 <li><strong>output_filename</strong> (<em>str.</em>) – Output filename.</li>
 </ul>
 </td>
