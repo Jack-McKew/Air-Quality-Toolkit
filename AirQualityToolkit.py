@@ -21,39 +21,7 @@ from Factorizer import *
 from NO2Processor import *
 from Statistics_Generator import *
 
-def BrowseClicked():
-    filename.delete(0,'end')
-    outpname.delete(0,'end')
-    file = filedialog.askopenfilename(filetypes = (("Dat files","*.dat"),("Text files","*.txt"),("all files","*.*")))
-    filename.insert(0,os.path.split(file)[1])
-    outpname.insert(0,os.path.split(file)[1].split('.')[0] + ".csv")
 
-def processClicked():
-    try:
-        process(headernum.get(),initialnum.get(),exceednum.get(),backname.get(),processname.get(),outputstatname.get())
-
-    except:
-        messagebox.showerror("Error","An error has occured while processing")
-        raise
-
-
-def browseback():
-    backname.delete(0,END)
-    file = filedialog.askopenfilename(filetypes = (("CSV files","*.csv"),("all files","*.*")))
-    backname.insert(0,os.path.split(file)[1])
-
-def csvformatclicked():
-    if(olm_state.get() == 1):
-        csvformatter(filename.get(),1,outpname.get())
-    else:
-        csvformatter(filename.get(),0,outpname.get())
-
-def browseout():
-    processname.delete(0,END)
-    outputstatname.delete(0,END)
-    file = filedialog.askopenfilename(filetypes = (("CSV files","*.csv"),("all files","*.*")))
-    processname.insert(0,os.path.split(file)[1])
-    outputstatname.insert(0,os.path.split(file)[1].split('.')[0] + "_Statistics.csv")
 
 
 
@@ -92,75 +60,127 @@ nb.grid(row=1, column=0, columnspan=50, rowspan=49, sticky='NESW')
 # gui_style.configure('My.TButton', foreground='red')
 # gui_style.configure('My.TFrame', background='yellow')
 
-page1 = ttk.Frame(nb)
-nb.add(page1, text='NO2 Processor')
+tabnames = ['Statistics Generator','Stitcher','Factorizer','Mass CSV Formatter','NO2 Processor']
 
-olm_state = IntVar()
-olm_state.set(0)
-
-inputlbl = Label(page1,text="File to format as CSV: ")
-filename = Entry(page1,width=40)
-outputlbl = Label(page1,text="File name of output CSV: ")
-outpname = Entry(page1,width=40)
-olm = Checkbutton(page1,text="CALPUFF Output Format?",var=olm_state)
-processlbl= Label(page1,text="Filename of CSV to process: ")
-processname = Entry(page1,width=40)
-backlbl = Label(page1,text="File name of Background NO2 CSV: ")
-backname = Entry(page1,width=40)
-initiallbl= Label(page1,text="Initial % to process (eg 0.1): ")
-initialnum = Entry(page1,width=40)
-initialnum.insert(0,"0.1")
-exceedlbl= Label(page1,text="Number of exceedances limit (eg 246): ")
-exceednum = Entry(page1,width=40)
-exceednum.insert(0,"246")
-headerlbl = Label(page1,text="Number of header columns in dataset (eg 3): ")
-headernum = Entry(page1,width=40)
-headernum.insert(0,"3")
-outputstatlbl= Label(page1,text="File name of output statistics CSV: ")
-outputstatname = Entry(page1,width=40)
-
-browsebtn = Button(page1,text="Browse",command=BrowseClicked)
-browsebtn.config(width=20)
-formatbtn = Button(page1,text="Format As CSV",command=csvformatclicked)
-formatbtn.config(width=20)
-browseout = Button(page1,text='Browse',command=browseout)
-browseout.config(width=20)
-browsecsv = Button(page1,text='Browse',command=browseback)
-browsecsv.config(width=20)
-processbtn = Button(page1,text='Process CSV',command=processClicked)
-processbtn.config(width=20)
-
-inputlbl.grid(column=0,row=0)
-outputlbl.grid(column=0,row=1)
-olm.grid(column=0,row=2)
-processlbl.grid(column=0,row=3)
-backlbl.grid(column=0,row=4)
-initiallbl.grid(column=0,row=5)
-exceedlbl.grid(column=0,row=6)
-headerlbl.grid(column=0,row=7)
-outputstatlbl.grid(column=0,row=8)
+tablist = []
 
 
-filename.grid(column=1,row=0)
-outpname.grid(column=1,row=1)
-# bar.grid(column=1, row=2)
-processname.grid(column=1,row=3)
-backname.grid(column=1,row=4)
-initialnum.grid(column=1,row=5)
-exceednum.grid(column=1,row=6)
-headernum.grid(column=1,row=7)
-outputstatname.grid(column=1,row=8)
+for name,i in zip(tabnames,range(1,len(tabnames)+1)):
+    pagenum = "page_" + str(i)
+    pagenum = ttk.Frame(nb)
+    nb.add(pagenum,text=name)
+    tablist.append(pagenum)
 
-browsebtn.grid(column=2,row=0)
-formatbtn.grid(column=2,row=1)
-browseout.grid(column=2,row=3)
-browsecsv.grid(column=2,row=4)
-processbtn.grid(column=2,row=8)
 
+# page1 = ttk.Frame(nb)
+# nb.add(page1, text='NO2 Processor')
+
+# page2 = ttk.Frame(nb,style="My.TFrame")
+# nb.add(page2, text='Stitcher')
+
+
+
+
+class NO2Processor(Frame):
+    def __init__(self,parent):
+        Frame.__init__(self,parent)
+        self.olm_state = IntVar()
+        self.olm_state.set(0)
+        self.inputlbl = Label(self,text="File to format as CSV: ")
+        self.filename = Entry(self,width=40)
+        self.outputlbl = Label(self,text="File name of output CSV: ")
+        self.outpname = Entry(self,width=40)
+        self.olm = Checkbutton(self,text="CALPUFF Output Format?",var=self.olm_state)
+        self.processlbl= Label(self,text="Filename of CSV to process: ")
+        self.processname = Entry(self,width=40)
+        self.backlbl = Label(self,text="File name of Background NO2 CSV: ")
+        self.backname = Entry(self,width=40)
+        self.initiallbl= Label(self,text="Initial % to process (eg 0.1): ")
+        self.initialnum = Entry(self,width=40)
+        self.initialnum.insert(0,"0.1")
+        self.exceedlbl= Label(self,text="Number of exceedances limit (eg 246): ")
+        self.exceednum = Entry(self,width=40)
+        self.exceednum.insert(0,"246")
+        self.headerlbl = Label(self,text="Number of header columns in dataset (eg 3): ")
+        self.headernum = Entry(self,width=40)
+        self.headernum.insert(0,"3")
+        self.outputstatlbl= Label(self,text="File name of output statistics CSV: ")
+        self.outputstatname = Entry(self,width=40)
+
+        self.inputlbl.grid(column=0,row=0)
+        self.outputlbl.grid(column=0,row=1)
+        self.olm.grid(column=0,row=2)
+        self.processlbl.grid(column=0,row=3)
+        self.backlbl.grid(column=0,row=4)
+        self.initiallbl.grid(column=0,row=5)
+        self.exceedlbl.grid(column=0,row=6)
+        self.headerlbl.grid(column=0,row=7)
+        self.outputstatlbl.grid(column=0,row=8)
+
+        self.filename.grid(column=1,row=0)
+        self.outpname.grid(column=1,row=1)
+        # self.bar.grid(column=1, row=2)
+        self.processname.grid(column=1,row=3)
+        self.backname.grid(column=1,row=4)
+        self.initialnum.grid(column=1,row=5)
+        self.exceednum.grid(column=1,row=6)
+        self.headernum.grid(column=1,row=7)
+        self.outputstatname.grid(column=1,row=8)
+
+        self.browsebtn = Button(self,text="Browse",command=self.BrowseClicked)
+        self.browsebtn.config(width=20)
+        self.formatbtn = Button(self,text="Format As CSV",command=self.csvformatclicked)
+        self.formatbtn.config(width=20)
+        self.browseout = Button(self,text='Browse',command=self.browseout)
+        self.browseout.config(width=20)
+        self.browsecsv = Button(self,text='Browse',command=self.browseback)
+        self.browsecsv.config(width=20)
+        self.processbtn = Button(self,text='Process CSV',command=self.processClicked)
+        self.processbtn.config(width=20)
+
+        self.browsebtn.grid(column=2,row=0)
+        self.formatbtn.grid(column=2,row=1)
+        self.browseout.grid(column=2,row=3)
+        self.browsecsv.grid(column=2,row=4)
+        self.processbtn.grid(column=2,row=8)
+
+    def BrowseClicked(self):
+        self.filename.delete(0,'end')
+        self.outpname.delete(0,'end')
+        file = filedialog.askopenfilename(filetypes = (("Dat files","*.dat"),("Text files","*.txt"),("all files","*.*")))
+        self.filename.insert(0,os.path.split(file)[1])
+        self.outpname.insert(0,os.path.split(file)[1].split('.')[0] + ".csv")
+
+    def processClicked(self):
+        try:
+            process(headernum.get(),initialnum.get(),exceednum.get(),backname.get(),processname.get(),outputstatname.get())
+
+        except:
+            messagebox.showerror("Error","An error has occured while processing")
+            raise
+
+
+    def browseback(self):
+        self.backname.delete(0,END)
+        file = filedialog.askopenfilename(filetypes = (("CSV files","*.csv"),("all files","*.*")))
+        self.backname.insert(0,os.path.split(file)[1])
+
+    def csvformatclicked(self):
+        if(olm_state.get() == 1):
+            csvformatter(filename.get(),1,outpname.get())
+        else:
+            csvformatter(filename.get(),0,outpname.get())
+
+    def browseout(self):
+        self.processname.delete(0,END)
+        self.outputstatname.delete(0,END)
+        file = filedialog.askopenfilename(filetypes = (("CSV files","*.csv"),("all files","*.*")))
+        self.processname.insert(0,os.path.split(file)[1])
+        self.outputstatname.insert(0,os.path.split(file)[1].split('.')[0] + "_Statistics.csv")
+
+NO2Processor(tablist[-1]).grid(row=1, column=0, columnspan=50, rowspan=49, sticky='NESW')
 
 # Adds tab 2 of the notebook
-page2 = ttk.Frame(nb,style="My.TFrame")
-nb.add(page2, text='Stitcher')
 filesl = []
 filesp = []
 scalesl = []
@@ -430,11 +450,11 @@ class StitcherFrame(Frame):
     def clearset(self):
         self.table.clear()
 
-StitcherFrame(page2).pack(side="top", fill="both", expand=True)
+StitcherFrame(tablist[1]).pack(side="top", fill="both", expand=True)
 
 
-page3 = ttk.Frame(nb)
-nb.add(page3, text='Factorizer')
+# page3 = ttk.Frame(nb)
+# nb.add(page3, text='Factorizer')
 
 factorfilesl = []
 factorsl = []
@@ -493,10 +513,10 @@ class Factorizer(Frame):
     def clearset(self):
         self.table.clear()
 
-Factorizer(page3).pack(side="top", fill="both", expand=True)
+Factorizer(tablist[2]).pack(side="top", fill="both", expand=True)
 
-page4 = ttk.Frame(nb)
-nb.add(page4, text='Mass CSV Formatter')
+# page4 = ttk.Frame(nb)
+# nb.add(page4, text='Mass CSV Formatter')
 
 csvsl = []
 olmsl = []
@@ -554,110 +574,113 @@ class MassCSV(Frame):
     def clearset(self):
         self.table.clear()
 
-MassCSV(page4).pack(side="top", fill="both", expand=True)
+MassCSV(tablist[3]).pack(side="top", fill="both", expand=True)
 
-page5 = ttk.Frame(nb)
-nb.add(page5,text="Statistics Generator")
+# page5 = ttk.Frame(nb)
+# nb.add(page5,text="Statistics Generator")
 
-def browsestatclicked():
-    statname.delete(0,'end')
-    outputstat2name.delete(0,'end')
-    file = filedialog.askopenfilename(filetypes = (("CSV files","*.csv"),("all files","*.*")))
-    statname.insert(0,os.path.split(file)[1])
-    outputstat2name.insert(0,os.path.split(file)[1].split('.')[0] + "_Statistics.csv")
+class Statistics_Generator(Frame):
+    def __init__(self,parent):
+        Frame.__init__(self,parent)
+        self.statlbl= Label(self,text="Filename of CSV to process: ")
+        self.statname = Entry(self,width=40)
+        self.header2lbl = Label(self,text="Number of header columns in dataset (eg 3): ")
+        self.header2num = Entry(self,width=40)
+        self.header2num.insert(0,"3")
+        self.outputstat2lbl= Label(self,text="File name of output statistics CSV: ")
+        self.outputstat2name = Entry(self,width=40)
 
-def runstats():
-    settings = {}
-    settings['max_of_sensor'] = max_sens_state.get()
-    settings['mean'] = mean_state.get()
-    settings['max_mean'] = max_mean_state.get()
-    settings['max'] = max_state.get()
-    settings['percentile'] = percentile_state.get()
-    if percentile_state.get() == 1:
-        settings['percentile_value'] = float(percentilename.get()) / 100
-    settings['max_percentile'] = max_of_percentile.get()
-    settings['rolling'] = rolling_state.get()
-    if rolling_state.get() == 1:
-        settings['rolling_value'] = int(rollingname.get())
-    settings['max_rolling'] = rolling_max_state.get()
-    Statistics_Generator(settings,header2num.get(),statname.get(),outputstat2name.get())
+        self.percentilelbl = Label(self,text="Percentile to compute (eg 99.9): ")
+        self.percentilename = Entry(self,width=40)
+        self.percentilename.insert(0,"99.9")
+
+        self.rollinglbl = Label(self,text="Rolling average window (eg 8): ")
+        self.rollingname = Entry(self,width=40)
+        self.rollingname.insert(0,"8")
+
+        self.settingslbl = Label(self,text='Settings for Statistics Output')
+
+        self.browsestatbtn = Button(self,text="Browse",command=self.browsestatclicked)
+        self.browsestatbtn.config(width=20)
+
+        self.runstatsbtn = Button(self,text="Run",command=self.runstats)
+        self.runstatsbtn.config(width=20)
+
+        self.mean_state = IntVar()
+        self.mean_state.set(1)
+        self.mean = Checkbutton(self,text="Average of Sensor",var=self.mean_state)
+        self.max_mean_state = IntVar()
+        self.max_mean_state.set(1)
+        self.max_mean = Checkbutton(self,text="Max Average of Sensors",var=self.max_mean_state)
+        self.max_sens_state = IntVar()
+        self.max_sens_state.set(1)
+        self.max_sens = Checkbutton(self,text="Max of Sensor",var=self.max_sens_state)
+        self.max_state = IntVar()
+        self.max_state.set(1)
+        self.maxbut = Checkbutton(self,text="Max of All Sensors",var=self.max_state)
+        self.percentile_state = IntVar()
+        self.percentile_en = Checkbutton(self,text="Enable Percentile",var=self.percentile_state)
+        self.max_of_percentile = IntVar()
+        self.max_of_percentile.set(0)
+        self.max_percentile = Checkbutton(self,text="Max of Percentile",var=self.max_of_percentile)
+
+        self.rolling_state = IntVar()
+        self.rolling_en = Checkbutton(self,text="Enable Rolling",var=self.rolling_state)
+        self.rolling_max_state = IntVar()
+        self.rolling_max_en = Checkbutton(self,text="Max of Rolling",var=self.rolling_max_state)
+
+        self.statlbl.grid(column=0,row=0)
+        self.header2lbl.grid(column=0,row=1)
+        self.outputstat2lbl.grid(column=0,row=2)
+        self.settingslbl.grid(column=1,row=3)
+        self.percentilelbl.grid(column=0,row=6)
+        self.rollinglbl.grid(column=0,row=8)
+
+        self.statname.grid(column = 1,row = 0)
+        self.header2num.grid(column= 1,row = 1)
+        self.outputstat2name.grid(column=1,row=2)
+        self.percentilename.grid(column=1,row=6)
+        self.rollingname.grid(column=1,row=8)
+
+        self.browsestatbtn.grid(column=2,row=0)
+        self.runstatsbtn.grid(column=2,row=2)
+        self.mean.grid(column=0,row = 4)
+        self.max_mean.grid(column=1,row=4)
+        self.maxbut.grid(column=2,row=4)
+        self.max_sens.grid(column=0,row=5)
+        self.percentile_en.grid(column=2,row=6)
+        self.max_percentile.grid(column=2,row=7)
+        self.rolling_en.grid(column=2,row=8)
+        self.rolling_max_en.grid(column=2,row=9)
 
 
+    def browsestatclicked(self):
+        self.statname.delete(0,'end')
+        self.outputstat2name.delete(0,'end')
+        file = filedialog.askopenfilename(filetypes = (("CSV files","*.csv"),("all files","*.*")))
+        self.statname.insert(0,os.path.split(file)[1])
+        self.outputstat2name.insert(0,os.path.split(file)[1].split('.')[0] + "_Statistics.csv")
 
-statlbl= Label(page5,text="Filename of CSV to process: ")
-statname = Entry(page5,width=40)
-header2lbl = Label(page5,text="Number of header columns in dataset (eg 3): ")
-header2num = Entry(page5,width=40)
-header2num.insert(0,"3")
-outputstat2lbl= Label(page5,text="File name of output statistics CSV: ")
-outputstat2name = Entry(page5,width=40)
+    def runstats(self):
+        settings = {}
+        settings['max_of_sensor'] = self.max_sens_state.get()
+        settings['mean'] = self.mean_state.get()
+        settings['max_mean'] = self.max_mean_state.get()
+        settings['max'] = self.max_state.get()
+        settings['percentile'] = self.percentile_state.get()
+        if self.percentile_state.get() == 1:
+            settings['percentile_value'] = float(self.percentilename.get()) / 100
+        settings['max_percentile'] = self.max_of_percentile.get()
+        settings['rolling'] = self.rolling_state.get()
+        if self.rolling_state.get() == 1:
+            settings['rolling_value'] = int(self.rollingname.get())
+        settings['max_rolling'] = self.rolling_max_state.get()
 
-percentilelbl = Label(page5,text="Percentile to compute (eg 99.9): ")
-percentilename = Entry(page5,width=40)
-percentilename.insert(0,"99.9")
-
-rollinglbl = Label(page5,text="Rolling average window (eg 8): ")
-rollingname = Entry(page5,width=40)
-rollingname.insert(0,"8")
-
-settingslbl = Label(page5,text='Settings for Statistics Output')
-
-browsestatbtn = Button(page5,text="Browse",command=browsestatclicked)
-browsestatbtn.config(width=20)
-
-runstatsbtn = Button(page5,text="Run",command=runstats)
-runstatsbtn.config(width=20)
-
-mean_state = IntVar()
-mean_state.set(1)
-mean = Checkbutton(page5,text="Average of Sensor",var=mean_state)
-max_mean_state = IntVar()
-max_mean_state.set(1)
-max_mean = Checkbutton(page5,text="Max Average of Sensors",var=max_mean_state)
-max_sens_state = IntVar()
-max_sens_state.set(1)
-max_sens = Checkbutton(page5,text="Max of Sensor",var=max_sens_state)
-max_state = IntVar()
-max_state.set(1)
-maxbut = Checkbutton(page5,text="Max of All Sensors",var=max_state)
-percentile_state = IntVar()
-percentile_en = Checkbutton(page5,text="Enable Percentile",var=percentile_state)
-max_of_percentile = IntVar()
-max_of_percentile.set(0)
-max_percentile = Checkbutton(page5,text="Max of Percentile",var=max_of_percentile)
-
-rolling_state = IntVar()
-rolling_en = Checkbutton(page5,text="Enable Rolling",var=rolling_state)
-rolling_max_state = IntVar()
-rolling_max_en = Checkbutton(page5,text="Max of Rolling",var=rolling_max_state)
-
-olm.grid(column=0,row=2)
+        Statistics_Generator(settings,self.header2num.get(),self.statname.get(),self.outputstat2name.get())
 
 
-statlbl.grid(column=0,row=0)
-header2lbl.grid(column=0,row=1)
-outputstat2lbl.grid(column=0,row=2)
-settingslbl.grid(column=1,row=3)
-percentilelbl.grid(column=0,row=6)
-rollinglbl.grid(column=0,row=8)
+Statistics_Generator(tablist[0]).grid(row=1, column=0, columnspan=50, rowspan=49, sticky='NESW')
 
-statname.grid(column = 1,row = 0)
-header2num.grid(column= 1,row = 1)
-outputstat2name.grid(column=1,row=2)
-percentilename.grid(column=1,row=6)
-rollingname.grid(column=1,row=8)
-
-browsestatbtn.grid(column=2,row=0)
-runstatsbtn.grid(column=2,row=2)
-
-mean.grid(column=0,row = 4)
-max_mean.grid(column=1,row=4)
-maxbut.grid(column=2,row=4)
-max_sens.grid(column=0,row=5)
-percentile_en.grid(column=2,row=6)
-max_percentile.grid(column=2,row=7)
-rolling_en.grid(column=2,row=8)
-rolling_max_en.grid(column=2,row=9)
 
 
 
