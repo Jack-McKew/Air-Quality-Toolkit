@@ -25,10 +25,10 @@ def Statistics_Generator(settings,header_length,input_data,output_filename):
     :type output_filename: str.
 
     """
-    print(settings)
 
     header_length = int(header_length)
-    outpath = os.path.join(os.getcwd(),input_data)
+    # outpath = os.path.join(os.getcwd(),input_data)
+    outpath = input_data
     try:
         temp_list = []
         data = pd.DataFrame
@@ -41,30 +41,30 @@ def Statistics_Generator(settings,header_length,input_data,output_filename):
 
         data = data.iloc[:,header_length:]
 
-        if(settings['max_of_sensor'] == 1):
+        if(settings['max_of_sensor']):
             outdf = pd.DataFrame({'Max of Sensor':data.max()})
-        if(settings['max'] == 1):
+        if(settings['max']):
             temp_df = pd.DataFrame({'Max of All Sensor':data.values.max()},index=[0])
             outdf = pd.concat([temp_df,outdf],axis=1,sort=False)
-        if(settings['mean'] == 1):
+        if(settings['mean']):
             temp_df = pd.DataFrame({'Average of Sensor':data.mean()})
             outdf = pd.concat([temp_df,outdf],axis=1,sort=False)
-        if(settings['max_mean'] == 1):
+        if(settings['max_mean']):
             temp_df = pd.DataFrame({'Average of Max Column':data.max().mean()},index=[0])
             outdf = pd.concat([temp_df,outdf],axis=1,sort=False)
-        if(settings['percentile'] == 1):
+        if(settings['percentile']):
             col_name = str(settings['percentile_value'] * 100) + " Percentile of Sensor"
             temp_df = pd.DataFrame({col_name:data.quantile(settings['percentile_value'])})
             outdf = pd.concat([temp_df,outdf],axis=1,sort=False)
-        if(settings['percentile'] == 1 and settings['max_percentile'] == 1):
+        if(settings['percentile'] and settings['max_percentile']):
             col_name = str(settings['percentile_value'] * 100) + " Max"
             temp_df = pd.DataFrame({col_name:data.quantile(settings['percentile_value']).max()},index=[0])
             outdf = pd.concat([temp_df,outdf],axis=1,sort=False)
-        if(settings['rolling'] == 1):
+        if(settings['rolling']):
             col_name = str(settings['rolling_value']) + " Hour Average of Sensor"
             temp_df = pd.DataFrame({col_name:data.rolling(window=settings['rolling_value']).mean().max()})
             outdf = pd.concat([temp_df,outdf],axis=1,sort=False)
-        if(settings['rolling'] == 1 and settings['max_rolling'] == 1):
+        if(settings['rolling']and settings['max_rolling']):
             col_name = str(settings['rolling_value']) + " Hour Max"
             temp_df = pd.DataFrame({col_name:data.rolling(window=settings['rolling_value']).mean().max().max()},index=[0])
             outdf = pd.concat([temp_df,outdf],axis=1,sort=False)
