@@ -188,103 +188,77 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
-        self.gridLayout_19 = QtWidgets.QGridLayout(self.tab_3)
-        self.gridLayout_19.setObjectName("gridLayout_19")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.tab_3)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.Factorizer_Table = QtWidgets.QTableWidget(self.tab_3)
+        self.Factorizer_Table.setRowCount(5)
+        self.Factorizer_Table.setObjectName("Factorizer_Table")
+        self.Factorizer_Table.setColumnCount(3)
+        item = QtWidgets.QTableWidgetItem()
+        self.Factorizer_Table.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.Factorizer_Table.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.Factorizer_Table.setHorizontalHeaderItem(2, item)
+        self.Factorizer_Table.horizontalHeader().setStretchLastSection(True)
+        self.verticalLayout.addWidget(self.Factorizer_Table)
         self.gridLayout_18 = QtWidgets.QGridLayout()
         self.gridLayout_18.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
         self.gridLayout_18.setObjectName("gridLayout_18")
-        self.lineEdit_15 = QtWidgets.QLineEdit(self.tab_3)
-        self.lineEdit_15.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.lineEdit_15.setObjectName("lineEdit_15")
-        self.gridLayout_18.addWidget(self.lineEdit_15, 1, 3, 1, 1)
-        self.label_17 = QtWidgets.QLabel(self.tab_3)
-        self.label_17.setObjectName("label_17")
-        self.gridLayout_18.addWidget(self.label_17, 1, 2, 1, 1, QtCore.Qt.AlignRight)
-        self.lineEdit_16 = QtWidgets.QLineEdit(self.tab_3)
-        self.lineEdit_16.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.lineEdit_16.setObjectName("lineEdit_16")
-        self.gridLayout_18.addWidget(self.lineEdit_16, 1, 1, 1, 1)
-        self.pushButton_13 = QtWidgets.QPushButton(self.tab_3)
-        self.pushButton_13.setObjectName("pushButton_13")
-        self.gridLayout_18.addWidget(self.pushButton_13, 0, 1, 1, 1)
-        self.pushButton_14 = QtWidgets.QPushButton(self.tab_3)
-        self.pushButton_14.setObjectName("pushButton_14")
-        self.gridLayout_18.addWidget(self.pushButton_14, 0, 2, 1, 1)
-        self.pushButton_15 = QtWidgets.QPushButton(self.tab_3)
-        self.pushButton_15.setObjectName("pushButton_15")
-        self.gridLayout_18.addWidget(self.pushButton_15, 0, 3, 1, 1)
-        self.pushButton_16 = QtWidgets.QPushButton(self.tab_3)
-        self.pushButton_16.setObjectName("pushButton_16")
-        self.gridLayout_18.addWidget(self.pushButton_16, 0, 0, 1, 1)
-        self.label_18 = QtWidgets.QLabel(self.tab_3)
-        self.label_18.setObjectName("label_18")
-        self.gridLayout_18.addWidget(self.label_18, 1, 0, 1, 1, QtCore.Qt.AlignRight)
-        self.gridLayout_19.addLayout(self.gridLayout_18, 1, 1, 1, 1)
-        self.tableWidget_3 = QtWidgets.QTableWidget(self.tab_3)
-        self.tableWidget_3.setRowCount(5)
-        self.tableWidget_3.setObjectName("tableWidget_3")
-        self.tableWidget_3.setColumnCount(3)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(2, item)
-        self.tableWidget_3.horizontalHeader().setStretchLastSection(True)
-        self.gridLayout_19.addWidget(self.tableWidget_3, 0, 0, 1, 2)
+        self.Factorizer_Import = QtWidgets.QPushButton(self.tab_3)
+        self.Factorizer_Import.setObjectName("Factorizer_Import")
+        self.gridLayout_18.addWidget(self.Factorizer_Import, 0, 1, 1, 1)
+        self.Factorizer_Clear = QtWidgets.QPushButton(self.tab_3)
+        self.Factorizer_Clear.setObjectName("Factorizer_Clear")
+        self.gridLayout_18.addWidget(self.Factorizer_Clear, 0, 2, 1, 1)
+        self.Factorizer_Run = QtWidgets.QPushButton(self.tab_3)
+        self.Factorizer_Run.setObjectName("Factorizer_Run")
+        self.gridLayout_18.addWidget(self.Factorizer_Run, 0, 3, 1, 1)
+        self.Factorizer_Browse = QtWidgets.QPushButton(self.tab_3)
+        self.Factorizer_Browse.setObjectName("Factorizer_Browse")
+        self.gridLayout_18.addWidget(self.Factorizer_Browse, 0, 0, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout_18)
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_7 = QtWidgets.QWidget()
         self.tab_7.setObjectName("tab_7")
         self.gridLayout_21 = QtWidgets.QGridLayout(self.tab_7)
         self.gridLayout_21.setObjectName("gridLayout_21")
+        self.MassCSV_Table = QtWidgets.QTableWidget(self.tab_7)
+        self.MassCSV_Table.setRowCount(5)
+        self.MassCSV_Table.setObjectName("MassCSV_Table")
+        self.MassCSV_Table.setColumnCount(3)
+        item = QtWidgets.QTableWidgetItem()
+        self.MassCSV_Table.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.MassCSV_Table.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.MassCSV_Table.setHorizontalHeaderItem(2, item)
+        self.MassCSV_Table.horizontalHeader().setDefaultSectionSize(259)
+        self.MassCSV_Table.horizontalHeader().setStretchLastSection(True)
+        self.gridLayout_21.addWidget(self.MassCSV_Table, 0, 0, 1, 1)
         self.gridLayout_20 = QtWidgets.QGridLayout()
         self.gridLayout_20.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
         self.gridLayout_20.setObjectName("gridLayout_20")
-        self.pushButton_19 = QtWidgets.QPushButton(self.tab_7)
-        self.pushButton_19.setObjectName("pushButton_19")
-        self.gridLayout_20.addWidget(self.pushButton_19, 0, 3, 1, 1)
-        self.pushButton_17 = QtWidgets.QPushButton(self.tab_7)
-        self.pushButton_17.setObjectName("pushButton_17")
-        self.gridLayout_20.addWidget(self.pushButton_17, 0, 1, 1, 1)
-        self.label_19 = QtWidgets.QLabel(self.tab_7)
-        self.label_19.setObjectName("label_19")
-        self.gridLayout_20.addWidget(self.label_19, 1, 2, 1, 1, QtCore.Qt.AlignRight)
-        self.pushButton_18 = QtWidgets.QPushButton(self.tab_7)
-        self.pushButton_18.setObjectName("pushButton_18")
-        self.gridLayout_20.addWidget(self.pushButton_18, 0, 2, 1, 1)
-        self.label_20 = QtWidgets.QLabel(self.tab_7)
-        self.label_20.setObjectName("label_20")
-        self.gridLayout_20.addWidget(self.label_20, 1, 0, 1, 1, QtCore.Qt.AlignRight)
-        self.pushButton_20 = QtWidgets.QPushButton(self.tab_7)
-        self.pushButton_20.setObjectName("pushButton_20")
-        self.gridLayout_20.addWidget(self.pushButton_20, 0, 0, 1, 1)
-        self.lineEdit_17 = QtWidgets.QLineEdit(self.tab_7)
-        self.lineEdit_17.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.lineEdit_17.setObjectName("lineEdit_17")
-        self.gridLayout_20.addWidget(self.lineEdit_17, 1, 3, 1, 1)
-        self.lineEdit_18 = QtWidgets.QLineEdit(self.tab_7)
-        self.lineEdit_18.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.lineEdit_18.setObjectName("lineEdit_18")
-        self.gridLayout_20.addWidget(self.lineEdit_18, 1, 1, 1, 1)
+        self.MassCSV_Browse = QtWidgets.QPushButton(self.tab_7)
+        self.MassCSV_Browse.setObjectName("MassCSV_Browse")
+        self.gridLayout_20.addWidget(self.MassCSV_Browse, 0, 0, 1, 1)
+        self.MassCSV_Run = QtWidgets.QPushButton(self.tab_7)
+        self.MassCSV_Run.setObjectName("MassCSV_Run")
+        self.gridLayout_20.addWidget(self.MassCSV_Run, 0, 3, 1, 1)
+        self.MassCSV_Import = QtWidgets.QPushButton(self.tab_7)
+        self.MassCSV_Import.setObjectName("MassCSV_Import")
+        self.gridLayout_20.addWidget(self.MassCSV_Import, 0, 1, 1, 1)
+        self.MassCSV_Clear = QtWidgets.QPushButton(self.tab_7)
+        self.MassCSV_Clear.setObjectName("MassCSV_Clear")
+        self.gridLayout_20.addWidget(self.MassCSV_Clear, 0, 2, 1, 1)
         self.gridLayout_21.addLayout(self.gridLayout_20, 1, 0, 1, 1)
-        self.tableWidget_4 = QtWidgets.QTableWidget(self.tab_7)
-        self.tableWidget_4.setRowCount(5)
-        self.tableWidget_4.setObjectName("tableWidget_4")
-        self.tableWidget_4.setColumnCount(3)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(2, item)
-        self.tableWidget_4.horizontalHeader().setDefaultSectionSize(259)
-        self.tableWidget_4.horizontalHeader().setStretchLastSection(True)
-        self.gridLayout_21.addWidget(self.tableWidget_4, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tab_7, "")
         self.tab_8 = QtWidgets.QWidget()
         self.tab_8.setObjectName("tab_8")
         self.gridLayout_27 = QtWidgets.QGridLayout(self.tab_8)
         self.gridLayout_27.setObjectName("gridLayout_27")
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_27.addItem(spacerItem1, 1, 0, 1, 1)
         self.groupBox_3 = QtWidgets.QGroupBox(self.tab_8)
         self.groupBox_3.setEnabled(True)
         self.groupBox_3.setObjectName("groupBox_3")
@@ -302,72 +276,72 @@ class Ui_MainWindow(object):
         self.label_25 = QtWidgets.QLabel(self.groupBox_3)
         self.label_25.setObjectName("label_25")
         self.gridLayout_26.addWidget(self.label_25, 1, 0, 1, 1, QtCore.Qt.AlignHCenter)
-        self.pushButton_21 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_21.setObjectName("pushButton_21")
-        self.gridLayout_26.addWidget(self.pushButton_21, 0, 2, 1, 1)
-        self.lineEdit_21 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_21.setObjectName("lineEdit_21")
-        self.gridLayout_26.addWidget(self.lineEdit_21, 1, 1, 1, 1)
-        self.lineEdit_22 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_22.setObjectName("lineEdit_22")
-        self.gridLayout_26.addWidget(self.lineEdit_22, 0, 1, 1, 1)
-        self.checkBox_25 = QtWidgets.QCheckBox(self.groupBox_3)
-        self.checkBox_25.setObjectName("checkBox_25")
-        self.gridLayout_26.addWidget(self.checkBox_25, 2, 0, 1, 1, QtCore.Qt.AlignHCenter)
-        self.pushButton_22 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_22.setObjectName("pushButton_22")
-        self.gridLayout_26.addWidget(self.pushButton_22, 1, 2, 1, 1)
+        self.NO2_Browse_Format_CSV = QtWidgets.QPushButton(self.groupBox_3)
+        self.NO2_Browse_Format_CSV.setObjectName("NO2_Browse_Format_CSV")
+        self.gridLayout_26.addWidget(self.NO2_Browse_Format_CSV, 0, 2, 1, 1)
+        self.NO2_Output_Format = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_Output_Format.setObjectName("NO2_Output_Format")
+        self.gridLayout_26.addWidget(self.NO2_Output_Format, 1, 1, 1, 1)
+        self.NO2_File_To_Format = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_File_To_Format.setObjectName("NO2_File_To_Format")
+        self.gridLayout_26.addWidget(self.NO2_File_To_Format, 0, 1, 1, 1)
+        self.NO2_Calpuff_Format = QtWidgets.QCheckBox(self.groupBox_3)
+        self.NO2_Calpuff_Format.setObjectName("NO2_Calpuff_Format")
+        self.gridLayout_26.addWidget(self.NO2_Calpuff_Format, 2, 0, 1, 1, QtCore.Qt.AlignHCenter)
+        self.NO2_Convert_To_CSV = QtWidgets.QPushButton(self.groupBox_3)
+        self.NO2_Convert_To_CSV.setObjectName("NO2_Convert_To_CSV")
+        self.gridLayout_26.addWidget(self.NO2_Convert_To_CSV, 1, 2, 1, 1)
         self.gridLayout_22.addLayout(self.gridLayout_26, 1, 0, 1, 1)
         self.gridLayout_23 = QtWidgets.QGridLayout()
         self.gridLayout_23.setContentsMargins(25, -1, 25, -1)
         self.gridLayout_23.setHorizontalSpacing(100)
         self.gridLayout_23.setVerticalSpacing(7)
         self.gridLayout_23.setObjectName("gridLayout_23")
-        self.pushButton_23 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_23.setObjectName("pushButton_23")
-        self.gridLayout_23.addWidget(self.pushButton_23, 0, 2, 1, 1)
-        self.pushButton_24 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_24.setObjectName("pushButton_24")
-        self.gridLayout_23.addWidget(self.pushButton_24, 1, 2, 1, 1)
-        self.lineEdit_24 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_24.setObjectName("lineEdit_24")
-        self.gridLayout_23.addWidget(self.lineEdit_24, 1, 1, 1, 1)
+        self.NO2_Process_CSV_Browse = QtWidgets.QPushButton(self.groupBox_3)
+        self.NO2_Process_CSV_Browse.setObjectName("NO2_Process_CSV_Browse")
+        self.gridLayout_23.addWidget(self.NO2_Process_CSV_Browse, 0, 2, 1, 1)
+        self.NO2_Background_Browse = QtWidgets.QPushButton(self.groupBox_3)
+        self.NO2_Background_Browse.setObjectName("NO2_Background_Browse")
+        self.gridLayout_23.addWidget(self.NO2_Background_Browse, 1, 2, 1, 1)
+        self.NO2_Background_File = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_Background_File.setObjectName("NO2_Background_File")
+        self.gridLayout_23.addWidget(self.NO2_Background_File, 1, 1, 1, 1)
         self.label_26 = QtWidgets.QLabel(self.groupBox_3)
         self.label_26.setObjectName("label_26")
-        self.gridLayout_23.addWidget(self.label_26, 0, 0, 1, 1)
-        self.lineEdit_19 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_19.setObjectName("lineEdit_19")
-        self.gridLayout_23.addWidget(self.lineEdit_19, 2, 1, 1, 1)
+        self.gridLayout_23.addWidget(self.label_26, 0, 0, 1, 1, QtCore.Qt.AlignHCenter)
+        self.NO2_Initial_Percent = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_Initial_Percent.setObjectName("NO2_Initial_Percent")
+        self.gridLayout_23.addWidget(self.NO2_Initial_Percent, 2, 1, 1, 1)
         self.label_22 = QtWidgets.QLabel(self.groupBox_3)
         self.label_22.setObjectName("label_22")
         self.gridLayout_23.addWidget(self.label_22, 2, 0, 1, 1, QtCore.Qt.AlignHCenter)
         self.label_21 = QtWidgets.QLabel(self.groupBox_3)
         self.label_21.setObjectName("label_21")
-        self.gridLayout_23.addWidget(self.label_21, 1, 0, 1, 1)
+        self.gridLayout_23.addWidget(self.label_21, 1, 0, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
         self.label_23 = QtWidgets.QLabel(self.groupBox_3)
         self.label_23.setObjectName("label_23")
         self.gridLayout_23.addWidget(self.label_23, 3, 0, 1, 1, QtCore.Qt.AlignHCenter)
-        self.lineEdit_23 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_23.setObjectName("lineEdit_23")
-        self.gridLayout_23.addWidget(self.lineEdit_23, 0, 1, 1, 1)
-        self.lineEdit_20 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_20.setObjectName("lineEdit_20")
-        self.gridLayout_23.addWidget(self.lineEdit_20, 3, 1, 1, 1)
+        self.NO2_Process_CSV = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_Process_CSV.setObjectName("NO2_Process_CSV")
+        self.gridLayout_23.addWidget(self.NO2_Process_CSV, 0, 1, 1, 1)
+        self.NO2_Exceedances = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_Exceedances.setObjectName("NO2_Exceedances")
+        self.gridLayout_23.addWidget(self.NO2_Exceedances, 3, 1, 1, 1)
         self.label_27 = QtWidgets.QLabel(self.groupBox_3)
         self.label_27.setObjectName("label_27")
         self.gridLayout_23.addWidget(self.label_27, 4, 0, 1, 1, QtCore.Qt.AlignHCenter)
         self.label_28 = QtWidgets.QLabel(self.groupBox_3)
         self.label_28.setObjectName("label_28")
         self.gridLayout_23.addWidget(self.label_28, 5, 0, 1, 1, QtCore.Qt.AlignHCenter)
-        self.lineEdit_25 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_25.setObjectName("lineEdit_25")
-        self.gridLayout_23.addWidget(self.lineEdit_25, 4, 1, 1, 1)
-        self.lineEdit_26 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_26.setObjectName("lineEdit_26")
-        self.gridLayout_23.addWidget(self.lineEdit_26, 5, 1, 1, 1)
-        self.pushButton_25 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_25.setObjectName("pushButton_25")
-        self.gridLayout_23.addWidget(self.pushButton_25, 5, 2, 1, 1)
+        self.NO2_Header_Columns = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_Header_Columns.setObjectName("NO2_Header_Columns")
+        self.gridLayout_23.addWidget(self.NO2_Header_Columns, 4, 1, 1, 1)
+        self.NO2_Output_Statistics = QtWidgets.QLineEdit(self.groupBox_3)
+        self.NO2_Output_Statistics.setObjectName("NO2_Output_Statistics")
+        self.gridLayout_23.addWidget(self.NO2_Output_Statistics, 5, 1, 1, 1)
+        self.NO2_Run_Stats = QtWidgets.QPushButton(self.groupBox_3)
+        self.NO2_Run_Stats.setObjectName("NO2_Run_Stats")
+        self.gridLayout_23.addWidget(self.NO2_Run_Stats, 5, 2, 1, 1)
         self.gridLayout_22.addLayout(self.gridLayout_23, 3, 0, 1, 1)
         self.line = QtWidgets.QFrame(self.groupBox_3)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
@@ -375,10 +349,6 @@ class Ui_MainWindow(object):
         self.line.setObjectName("line")
         self.gridLayout_22.addWidget(self.line, 2, 0, 1, 1)
         self.gridLayout_27.addWidget(self.groupBox_3, 0, 0, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_27.addItem(spacerItem1, 1, 0, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_27.addItem(spacerItem2, 0, 1, 1, 1)
         self.tabWidget.addTab(self.tab_8, "")
         self.gridLayout_3.addWidget(self.tabWidget, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -391,7 +361,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -415,6 +385,7 @@ class Ui_MainWindow(object):
         self.Stat_Run_1.setText(_translate("MainWindow", "Run"))
         self.label_3.setText(_translate("MainWindow", "File name of output statistics CSV:"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Statistics Generator"))
+        self.Stitcher_Out_File.setText(_translate("MainWindow", "Stitcher_Output.csv"))
         self.label_7.setText(_translate("MainWindow", "Output File Name:"))
         self.Stitcher_Import.setText(_translate("MainWindow", "Import Settings CSV"))
         self.Stitcher_Clear.setText(_translate("MainWindow", "Clear"))
@@ -430,50 +401,46 @@ class Ui_MainWindow(object):
         item = self.Stitcher_Table.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Columns to Exclude"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Stitcher"))
-        self.label_17.setText(_translate("MainWindow", "Output File Name:"))
-        self.pushButton_13.setText(_translate("MainWindow", "Import Settings CSV"))
-        self.pushButton_14.setText(_translate("MainWindow", "Clear"))
-        self.pushButton_15.setText(_translate("MainWindow", "Factorize"))
-        self.pushButton_16.setText(_translate("MainWindow", "Browse"))
-        self.label_18.setText(_translate("MainWindow", "Output Folder:"))
-        item = self.tableWidget_3.horizontalHeaderItem(0)
+        item = self.Factorizer_Table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "File Name"))
-        item = self.tableWidget_3.horizontalHeaderItem(1)
+        item = self.Factorizer_Table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Factor"))
-        item = self.tableWidget_3.horizontalHeaderItem(2)
+        item = self.Factorizer_Table.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Output File Name"))
+        self.Factorizer_Import.setText(_translate("MainWindow", "Import Settings CSV"))
+        self.Factorizer_Clear.setText(_translate("MainWindow", "Clear"))
+        self.Factorizer_Run.setText(_translate("MainWindow", "Factorize"))
+        self.Factorizer_Browse.setText(_translate("MainWindow", "Browse"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Factorizer"))
-        self.pushButton_19.setText(_translate("MainWindow", "Convert"))
-        self.pushButton_17.setText(_translate("MainWindow", "Import Settings CSV"))
-        self.label_19.setText(_translate("MainWindow", "Output File Name:"))
-        self.pushButton_18.setText(_translate("MainWindow", "Clear"))
-        self.label_20.setText(_translate("MainWindow", "Output Folder:"))
-        self.pushButton_20.setText(_translate("MainWindow", "Browse"))
-        item = self.tableWidget_4.horizontalHeaderItem(0)
+        item = self.MassCSV_Table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "File Name"))
-        item = self.tableWidget_4.horizontalHeaderItem(1)
+        item = self.MassCSV_Table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "CALPUFF Output Format? (0/1)"))
-        item = self.tableWidget_4.horizontalHeaderItem(2)
+        item = self.MassCSV_Table.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Output File Name"))
+        self.MassCSV_Browse.setText(_translate("MainWindow", "Browse"))
+        self.MassCSV_Run.setText(_translate("MainWindow", "Convert"))
+        self.MassCSV_Import.setText(_translate("MainWindow", "Import Settings CSV"))
+        self.MassCSV_Clear.setText(_translate("MainWindow", "Clear"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("MainWindow", "Mass CSV Formatter"))
         self.groupBox_3.setTitle(_translate("MainWindow", "NO2 Processor Tools"))
         self.label_24.setText(_translate("MainWindow", "File to format as CSV:"))
         self.label_25.setText(_translate("MainWindow", "File name of output CSV:"))
-        self.pushButton_21.setText(_translate("MainWindow", "Browse"))
-        self.checkBox_25.setText(_translate("MainWindow", "CALPUFF Output Format?"))
-        self.pushButton_22.setText(_translate("MainWindow", "Convert to CSV"))
-        self.pushButton_23.setText(_translate("MainWindow", "Browse"))
-        self.pushButton_24.setText(_translate("MainWindow", "Browse"))
+        self.NO2_Browse_Format_CSV.setText(_translate("MainWindow", "Browse"))
+        self.NO2_Calpuff_Format.setText(_translate("MainWindow", "CALPUFF Output Format?"))
+        self.NO2_Convert_To_CSV.setText(_translate("MainWindow", "Convert to CSV"))
+        self.NO2_Process_CSV_Browse.setText(_translate("MainWindow", "Browse"))
+        self.NO2_Background_Browse.setText(_translate("MainWindow", "Browse"))
         self.label_26.setText(_translate("MainWindow", "File name of CSV to process:"))
-        self.lineEdit_19.setText(_translate("MainWindow", "0.1"))
+        self.NO2_Initial_Percent.setText(_translate("MainWindow", "0.1"))
         self.label_22.setText(_translate("MainWindow", "Initial % to process (eg 0.1)"))
         self.label_21.setText(_translate("MainWindow", "File name of Background NO2 CSV:"))
         self.label_23.setText(_translate("MainWindow", "Number of exceedances limit (eg 246)"))
-        self.lineEdit_20.setText(_translate("MainWindow", "246"))
+        self.NO2_Exceedances.setText(_translate("MainWindow", "246"))
         self.label_27.setText(_translate("MainWindow", "Number of header columns in dataset (eg 3)"))
         self.label_28.setText(_translate("MainWindow", "File name of output statistics CSV:"))
-        self.lineEdit_25.setText(_translate("MainWindow", "3"))
-        self.pushButton_25.setText(_translate("MainWindow", "Process CSV"))
+        self.NO2_Header_Columns.setText(_translate("MainWindow", "3"))
+        self.NO2_Run_Stats.setText(_translate("MainWindow", "Process CSV"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), _translate("MainWindow", "NO2 Processor"))
 
         #STATISTICS BUTTONS
@@ -482,9 +449,43 @@ class Ui_MainWindow(object):
 
         #STITCHER BUTTONS
         self.Stitcher_Browse.clicked.connect(self.Stitcher_Browse_Clicked)
+        self.Stitcher_Import.clicked.connect(self.Stitcher_Import_Clicked)
+        self.Stitcher_Clear.clicked.connect(self.Stitcher_Clear_Clicked)
+        self.Stitcher_Run.clicked.connect(self.Stitcher_Run_Clicked)
+
+        #FACTORIZER BUTTONS
+        self.Factorizer_Browse.clicked.connect(self.Factorizer_Browse_Clicked)
+        self.Factorizer_Import.clicked.connect(self.Factorizer_Import_Clicked)
+        self.Factorizer_Clear.clicked.connect(self.Factorizer_Clear_Clicked)
+        self.Factorizer_Run.clicked.connect(self.Factorizer_Run_Clicked)
+
+        #MASS CSV BUTTONS
+        self.MassCSV_Browse.clicked.connect(self.MassCSV_Browse_Clicked)
+        self.MassCSV_Import.clicked.connect(self.MassCSV_Import_Clicked)
+        self.MassCSV_Clear.clicked.connect(self.MassCSV_Clear_Clicked)
+        self.MassCSV_Run.clicked.connect(self.MassCSV_Run_Clicked)
+
+        #NO2 PROCESSOR BUTTONS
+        self.NO2_Browse_Format_CSV.clicked.connect(self.NO2_Browse_Format_CSV_Clicked)
+        self.NO2_Convert_To_CSV.clicked.connect(self.NO2_Convert_To_CSV_Clicked)
+        self.NO2_Background_Browse.clicked.connect(self.NO2_Background_Browse_Clicked)
+        self.NO2_Process_CSV_Browse.clicked.connect(self.NO2_Process_CSV_Browse_Clicked)
+        self.NO2_Run_Stats.clicked.connect(self.NO2_Run_Stats_Clicked)
 
 
-#### STATISTICS GENERATOR FUNCTIONS
+#### GENERAL FUNCTIONS
+    @staticmethod
+    def Get_Table(table):
+        tbl = []
+        for row in range(table.rowCount()):
+            tbl.append([])
+            for col in range(table.columnCount()):
+                if table.item(row,col) != None:
+                    value = table.item(row,col).text()
+                    tbl[row].append(str(value))
+        return tbl
+
+
     @staticmethod
     def ErrorBox(errortext,console_error):
             msg = QMessageBox()
@@ -495,6 +496,8 @@ class Ui_MainWindow(object):
             msg.setDetailedText("Error from console: \n" + console_error)
             msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
             msg.exec_()
+
+#### STATISTICS GENERATOR FUNCTIONS
 
     def Stat_Browse_Clicked(self):
         self.Stat_To_Convert.setText("")
@@ -523,7 +526,8 @@ class Ui_MainWindow(object):
             Statistics_Generator(settings,self.Stat_Header.text(),self.Stat_To_Convert.text(),self.Stat_Output.text())
         except ValueError as error:
             self.ErrorBox("Input Settings Invalid",str(error))
-            raise
+        except Exception as err:
+            ErrorBox("Error",str(err))
 
 
 #### STITCHER FUNCTIONS
@@ -531,18 +535,156 @@ class Ui_MainWindow(object):
     def Stitcher_Browse_Clicked(self):
         options = QFileDialog.Options()
         filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
-        stitcher_tbl = []
         for row in range(self.Stitcher_Table.rowCount()):
-            stitcher_tbl.append([])
-            for col in range(self.Stitcher_Table.columnCount()):
-                value = self.Stitcher_Table.item(row,col)
-                print(value)
-                stitcher_tbl[row].append(str(value))
-        print(stitcher_tbl)
-        self.Stitcher_Table.setItem(0,0,QTableWidgetItem(filename[0]))
+            if self.Stitcher_Table.item(row,0) == None and row == self.Stitcher_Table.rowCount() - 1:
+                self.Stitcher_Table.insertRow(row)
+            if self.Stitcher_Table.item(row,0) == None:
+                self.Stitcher_Table.setItem(row,0,QTableWidgetItem(os.path.split(filename[0])[0]))
+                self.Stitcher_Table.setItem(row,1,QTableWidgetItem(os.path.split(filename[0])[1]))
+                if row == 0:
+                    self.Stitcher_Out_Folder.setText(os.path.split(filename[0])[0])
+                break
+
+    def Stitcher_Import_Clicked(self):
+        options = QFileDialog.Options()
+        filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
+        settings = pd.read_csv(filename[0])
+        settings = settings.loc[:,~settings.columns.str.contains('^Unnamed')]
+        for folder,filename,scale,header,row in zip(settings.loc[:,'Folder'],settings.loc[:,'Filename'],settings.loc[:,'Scale'],settings.loc[:,'Headers'],range(len(settings.loc[:,'Folder']))):
+                if self.Stitcher_Table.item(row,0) == None and row == self.Stitcher_Table.rowCount() - 1:
+                    self.Stitcher_Table.insertRow(row)
+                if self.Stitcher_Table.item(row,0) == None:
+                    self.Stitcher_Table.setItem(row,0,QTableWidgetItem(folder))
+                    self.Stitcher_Table.setItem(row,1,QTableWidgetItem(filename))
+                    self.Stitcher_Table.setItem(row,2,QTableWidgetItem(str(scale)))
+                    self.Stitcher_Table.setItem(row,3,QTableWidgetItem(str(header)))
+                    if row == 0:
+                        self.Stitcher_Out_Folder.setText(folder)
+
+    def Stitcher_Clear_Clicked(self):
+        self.Stitcher_Table.clearContents()
+
+    def Stitcher_Run_Clicked(self):
+        filesp = []
+        filesl = []
+        scalesl = []
+        headers = []
+        for row in self.Get_Table(self.Stitcher_Table):
+            if row:
+                filesp.append(row[0])
+                filesl.append(row[1])
+                scalesl.append(row[2])
+                headers.append(row[3])
+        try:
+            Stitcher(filesp,filesl,scalesl,headers,os.path.join(self.Stitcher_Out_Folder.text(),self.Stitcher_Out_File.text()))
+        except TypeError:
+            ErrorBox("Incorrect Settings","Incorrect settings, please review input table for errors")
+        except Exception as err:
+            ErrorBox("Error",str(err))
+
+#### FACTORIZER FUNCTIONS
+    def Factorizer_Browse_Clicked(self):
+            options = QFileDialog.Options()
+            filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
+            for row in range(self.Factorizer_Table.rowCount()):
+                if self.Factorizer_Table.item(row,0) == None and row == self.Factorizer_Table.rowCount() - 1:
+                    self.Factorizer_Table.insertRow(row)
+                if self.Factorizer_Table.item(row,0) == None:
+                    self.Factorizer_Table.setItem(row,0,QTableWidgetItem(filename[0]))
+                    break
 
 
+    def Factorizer_Import_Clicked(self):
+        options = QFileDialog.Options()
+        filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
+        settings = pd.read_csv(filename[0])
+        settings = settings.loc[:,~settings.columns.str.contains('^Unnamed')]
+        for filename,factor,row in zip(settings.loc[:,'Filename'],settings.loc[:,'Factors'],range(len(settings.loc[:,'Filename']))):
+                if self.Factorizer_Table.item(row,0) == None and row == self.Factorizer_Table.rowCount() - 1:
+                    self.Factorizer_Table.insertRow(row)
+                if self.Factorizer_Table.item(row,0) == None:
+                    self.Factorizer_Table.setItem(row,0,QTableWidgetItem(filename))
+                    self.Factorizer_Table.setItem(row,1,QTableWidgetItem(factor))
+                    self.Factorizer_Table.setItem(row,2,QTableWidgetItem(filename.split('.')[0] + "_Factorized.csv"))
 
+    def Factorizer_Clear_Clicked(self):
+            self.Factorizer_Table.clearContents()
+
+    def Factorizer_Run_Clicked(self):
+        for row in self.Get_Table(self.Factorizer_Table):
+            try:
+                if row:
+                    factorizer(row[0],row[1],row[2])
+            except:
+                ErrorBox("Incorrect Settings","Incorrect settings, please review input table for errors")
+
+#### MASS CSV FUNCTIONS
+    def MassCSV_Browse_Clicked(self):
+        options = QFileDialog.Options()
+        filename,_ = QFileDialog.getOpenFileNames(None,"DAT File to Process","","Dat Files (*.dat);;All Files (*);", options=options)
+        for row in range(self.MassCSV_Table.rowCount()):
+            if self.MassCSV_Table.item(row,0) == None and row == self.MassCSV_Table.rowCount() - 1:
+                self.MassCSV_Table.insertRow(row)
+            if self.MassCSV_Table.item(row,0) == None:
+                self.MassCSV_Table.setItem(row,0,QTableWidgetItem(filename[0]))
+                break
+
+
+    def MassCSV_Import_Clicked(self):
+        options = QFileDialog.Options()
+        filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
+        settings = pd.read_csv(filename[0])
+        settings = settings.loc[:,~settings.columns.str.contains('^Unnamed')]
+        for filename,calpuff,row in zip(settings.loc[:,'Filename'],settings.loc[:,'XY Included'],range(len(settings.loc[:,'Filename']))):
+                if self.MassCSV_Table.item(row,0) == None and row == self.MassCSV_Table.rowCount() - 1:
+                    self.MassCSV_Table.insertRow(row)
+                if self.MassCSV_Table.item(row,0) == None:
+                    self.MassCSV_Table.setItem(row,0,QTableWidgetItem(filename))
+                    self.MassCSV_Table.setItem(row,1,QTableWidgetItem(str(calpuff)))
+                    self.MassCSV_Table.setItem(row,2,QTableWidgetItem(filename.split('.')[0] + "_Formatted.csv"))
+
+    def MassCSV_Clear_Clicked(self):
+            self.MassCSV_Table.clearContents()
+
+    def MassCSV_Run_Clicked(self):
+        for row in self.Get_Table(self.MassCSV_Table):
+            try:
+                if row:
+                    csvformatter(row[0],row[1],row[2])
+            except FileNotFoundError:
+                ErrorBox("File Not Found","File not found, please specify file to format")
+            except Exception as err:
+                ErrorBox("Error",str(err))
+
+### NO2 PROCESSOR FUNCTIONS
+    def NO2_Browse_Format_CSV_Clicked(self):
+        options = QFileDialog.Options()
+        filename,_ = QFileDialog.getOpenFileNames(None,"DAT File to Process","","Dat Files (*.dat);;All Files (*);", options=options)
+        self.NO2_File_To_Format.setText(filename[0])
+        self.NO2_Output_Format.setText(filename[0].split('.')[0] + "_Formatted.csv")
+
+    def NO2_Convert_To_CSV_Clicked(self):
+        try:
+            csvformatter(self.NO2_File_To_Format.text(),self.NO2_Calpuff_Format.isChecked(),self.NO2_Output_Format.text())
+        except Exception as err:
+            ErrorBox("Error",str(err))
+
+    def NO2_Process_CSV_Browse_Clicked(self):
+        options = QFileDialog.Options()
+        filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
+        self.NO2_Process_CSV.setText(filename[0])
+        self.NO2_Output_Statistics.setText(filename[0].split('.')[0] + "_Statistics.csv")
+
+    def NO2_Background_Browse_Clicked(self):
+        options = QFileDialog.Options()
+        filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
+        self.NO2_Background_File.setText(filename[0])
+
+    def NO2_Run_Stats_Clicked(self):
+        try:
+            process(int(self.NO2_Header_Columns.text()),float(self.NO2_Initial_Percent.text()),int(self.NO2_Exceedances.text()),self.NO2_Background_File.text(),self.NO2_Process_CSV.text(),self.NO2_Output_Statistics.text())
+        except Exception as err:
+            ErrorBox("Error",str(err))
 
 
 

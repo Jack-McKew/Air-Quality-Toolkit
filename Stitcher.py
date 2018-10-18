@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from tkinter import messagebox
+from PyQt5.QtWidgets import QMessageBox
 
 """
 .. module:: Stitcher
@@ -11,6 +11,24 @@ from tkinter import messagebox
 
 
 """
+def ErrorBox(errortext,console_error):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText(errortext)
+            msg.setWindowTitle("Error")
+            msg.setInformativeText("Please review input settings")
+            msg.setDetailedText("Error from console: \n" + console_error)
+            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+            msg.exec_()
+
+def InfoBox(text,log):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setText(text)
+            msg.setWindowTitle("Complete")
+            msg.setDetailedText(log)
+            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+            msg.exec_()
 
 def Stitcher(filepath_list,filename,scale,headers_list,output_filename):
     """This function sums multiple dataframes together and outputs a csv of the result.
@@ -36,13 +54,11 @@ def Stitcher(filepath_list,filename,scale,headers_list,output_filename):
             float(scale)
         except ValueError:
             print("Invalid Scale for: " + filename + " Scale: " + scale + " is not a number")
-            raise
             continue
         try:
             int(header)
         except ValueError:
             print("Invalid Scale for: " + filename + " Header: " + header + " is not a number")
-            raise
             continue
         headlen = int(header)
         try:
@@ -61,15 +77,16 @@ def Stitcher(filepath_list,filename,scale,headers_list,output_filename):
                 dataout.update(dataout.iloc[:,headlen:].add(data.iloc[:,headlen:]))
             del data
         except:
-            messagebox.showerror("File Not Found","File not found, please specify file \nFile not found: " + filename)
-            raise
+            ErrorBox("File Not Found","File not found, please specify file \nFile not found: " + filename)
     try:
         dataout.to_csv(output_filename)
         print("Complete: File Path " + str(output_filename))
-        messagebox.showinfo("Complete","File Path: " + str(output_filename))
-    except UnboundLocalError:
-        messagebox.showwarning("Output Data Empty","Output dataset empty, please check input datasets")
-        raise
-    except OSError:
-        messagebox.showerror("Output Data Name","Invalid output dataset filename, please specify output dataset name")
-        raise
+        InfoBox("Complete","File Path: " + str(output_filename))
+    except FileNotFoundError as err:
+        ErrorBox("Output Data File","Invalid output dataset filename, please specify output dataset name \n" + str(err))
+    except UnboundLocalError as err:
+        ErrorBox("Output Data Empty","Output dataset empty, please check input datasets\n" + str(err))
+    except OSError as err:
+        ErrorBox("Output Data Name","Invalid output dataset filename, please specify output dataset name\n" + str(err))
+    except Exception as err:
+        ErrorBox("Error",str(err))

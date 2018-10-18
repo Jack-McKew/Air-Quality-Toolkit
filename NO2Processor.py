@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from tkinter import messagebox
+from PyQt5.QtWidgets import QMessageBox
 
 """
 .. module:: NO2Processor
@@ -11,6 +11,26 @@ from tkinter import messagebox
 
 
 """
+
+def ErrorBox(errortext,console_error):
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Critical)
+    msg.setText(errortext)
+    msg.setWindowTitle("Error")
+    msg.setInformativeText("Please review input settings")
+    msg.setDetailedText("Error from console: \n" + console_error)
+    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+    msg.exec_()
+
+def InfoBox(text,log):
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Information)
+    msg.setText(text)
+    msg.setWindowTitle("Complete")
+    msg.setDetailedText(log)
+    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+    msg.exec_()
+
 
 def process(header_length,initial,exceedance,background_name,input_data,output_filename):
     """This function applies air quality modelling functions and generates statistics.
@@ -71,10 +91,10 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
                                 '8 Hour Max':data.rolling(window=8).mean().max().max()})
         outdf.index.name = 'Sensor ID'
         outdf.to_csv(output_filename)
-        messagebox.showinfo("Complete","Processing complete, file name is: " + output_filename)
-        backquestion = messagebox.askyesno("Background NO2 statistics?","Would you like to process Background NO2 statistics?")
+        InfoBox("Complete","Processing complete, file name is: " + output_filename)
+        backquestion = QMessageBox.question(None,'Background NO2 Statistics?',"Would you like to process Background NO2 statistics?", QMessageBox.Yes | QMessageBox.No)
 
-        if backquestion == True:
+        if backquestion == QMessageBox.Yes:
             data['background'] = list(background['Background NO2'])
             data = data.apply(backfunction,axis=1)
             outdf = pd.DataFrame({  'Max of Sensor':data.max(),'Average of Sensor':data.mean(),
@@ -88,11 +108,11 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
             outdf.index.name = 'Sensor ID'
             new_name = output_filename.split('.')[0] + "_BG_NO2.csv"
             outdf.to_csv(new_name)
-            messagebox.showinfo("Complete","Processing complete, file name is: " + new_name)
+            InfoBox("Complete","Processing complete, file name is: " + new_name)
 
-    except OSError:
-        messagebox.showerror("File Not Found","File not found, please specify CSV and/or Background NO2 CSV")
-        raise
-    except ValueError:
-        messagebox.showerror("Invalid Dataset","Invalid dataset, please check input datasets")
-        raise
+    except OSError as err:
+        ErrorBox("File Not Found","File not found, please specify CSV and/or Background NO2 CSV\n" + str(err))
+    except ValueError as err:
+        ErrorBox("Invalid Dataset","Invalid dataset, please check input datasets\n" + str(err))
+    except Exception as err:
+        ErrorBox("Error",str(err))

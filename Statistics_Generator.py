@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from tkinter import messagebox
+from PyQt5.QtWidgets import QMessageBox
 
 """
 .. module:: Statistics_Generator
@@ -11,6 +11,25 @@ from tkinter import messagebox
 
 
 """
+
+def ErrorBox(errortext,console_error):
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Critical)
+    msg.setText(errortext)
+    msg.setWindowTitle("Error")
+    msg.setInformativeText("Please review input settings")
+    msg.setDetailedText("Error from console: \n" + console_error)
+    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+    msg.exec_()
+
+def InfoBox(text,log):
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Information)
+    msg.setText(text)
+    msg.setWindowTitle("Complete")
+    msg.setDetailedText(log)
+    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+    msg.exec_()
 
 def Statistics_Generator(settings,header_length,input_data,output_filename):
     """This function generates statistics on given input datasets.
@@ -71,11 +90,11 @@ def Statistics_Generator(settings,header_length,input_data,output_filename):
 
         outdf.index.name = 'Sensor ID'
         outdf.to_csv(output_filename)
-        messagebox.showinfo("Complete","Processing complete, file name is: " + output_filename)
+        InfoBox("Complete","Processing complete, file name is: " + output_filename)
 
-    except OSError:
-        messagebox.showerror("File Not Found","File not found, please specify CSV and/or Background NO2 CSV")
-        raise
-    except ValueError:
-        messagebox.showerror("Invalid Dataset","Invalid dataset, please check input datasets")
-        raise
+    except OSError as err:
+        ErrorBox("File Not Found","File not found, please specify CSV and/or Background NO2 CSV\n" + str(err))
+    except ValueError as err:
+        ErrorBox("Invalid Dataset","Invalid dataset, please check input datasets\n" + str(err))
+    except Exception as err:
+        ErrorBox("Error",str(err))

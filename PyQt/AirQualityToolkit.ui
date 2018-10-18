@@ -30,7 +30,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -283,6 +283,9 @@
               <height>16777215</height>
              </size>
             </property>
+            <property name="text">
+             <string>Stitcher_Output.csv</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="2" alignment="Qt::AlignRight">
@@ -380,78 +383,9 @@
        <attribute name="title">
         <string>Factorizer</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_19">
-        <item row="1" column="1">
-         <layout class="QGridLayout" name="gridLayout_18">
-          <property name="sizeConstraint">
-           <enum>QLayout::SetFixedSize</enum>
-          </property>
-          <item row="1" column="3">
-           <widget class="QLineEdit" name="lineEdit_15">
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>16777215</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2" alignment="Qt::AlignRight">
-           <widget class="QLabel" name="label_17">
-            <property name="text">
-             <string>Output File Name:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="lineEdit_16">
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>16777215</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_13">
-            <property name="text">
-             <string>Import Settings CSV</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton_14">
-            <property name="text">
-             <string>Clear</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="pushButton_15">
-            <property name="text">
-             <string>Factorize</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_16">
-            <property name="text">
-             <string>Browse</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" alignment="Qt::AlignRight">
-           <widget class="QLabel" name="label_18">
-            <property name="text">
-             <string>Output Folder:</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QTableWidget" name="tableWidget_3">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QTableWidget" name="Factorizer_Table">
           <property name="rowCount">
            <number>5</number>
           </property>
@@ -480,6 +414,41 @@
           </column>
          </widget>
         </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_18">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetFixedSize</enum>
+          </property>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="Factorizer_Import">
+            <property name="text">
+             <string>Import Settings CSV</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="Factorizer_Clear">
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="Factorizer_Run">
+            <property name="text">
+             <string>Factorize</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="Factorizer_Browse">
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_7">
@@ -487,77 +456,8 @@
         <string>Mass CSV Formatter</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_21">
-        <item row="1" column="0">
-         <layout class="QGridLayout" name="gridLayout_20">
-          <property name="sizeConstraint">
-           <enum>QLayout::SetFixedSize</enum>
-          </property>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="pushButton_19">
-            <property name="text">
-             <string>Convert</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_17">
-            <property name="text">
-             <string>Import Settings CSV</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2" alignment="Qt::AlignRight">
-           <widget class="QLabel" name="label_19">
-            <property name="text">
-             <string>Output File Name:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton_18">
-            <property name="text">
-             <string>Clear</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" alignment="Qt::AlignRight">
-           <widget class="QLabel" name="label_20">
-            <property name="text">
-             <string>Output Folder:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_20">
-            <property name="text">
-             <string>Browse</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QLineEdit" name="lineEdit_17">
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>16777215</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="lineEdit_18">
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>16777215</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="0" column="0">
-         <widget class="QTableWidget" name="tableWidget_4">
+         <widget class="QTableWidget" name="MassCSV_Table">
           <property name="rowCount">
            <number>5</number>
           </property>
@@ -589,6 +489,41 @@
           </column>
          </widget>
         </item>
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="gridLayout_20">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetFixedSize</enum>
+          </property>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="MassCSV_Browse">
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="MassCSV_Run">
+            <property name="text">
+             <string>Convert</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="MassCSV_Import">
+            <property name="text">
+             <string>Import Settings CSV</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="MassCSV_Clear">
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_8">
@@ -596,6 +531,19 @@
         <string>NO2 Processor</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_27">
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="0" column="0">
          <widget class="QGroupBox" name="groupBox_3">
           <property name="enabled">
@@ -643,27 +591,27 @@
               </widget>
              </item>
              <item row="0" column="2">
-              <widget class="QPushButton" name="pushButton_21">
+              <widget class="QPushButton" name="NO2_Browse_Format_CSV">
                <property name="text">
                 <string>Browse</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEdit_21"/>
+              <widget class="QLineEdit" name="NO2_Output_Format"/>
              </item>
              <item row="0" column="1">
-              <widget class="QLineEdit" name="lineEdit_22"/>
+              <widget class="QLineEdit" name="NO2_File_To_Format"/>
              </item>
              <item row="2" column="0" alignment="Qt::AlignHCenter">
-              <widget class="QCheckBox" name="checkBox_25">
+              <widget class="QCheckBox" name="NO2_Calpuff_Format">
                <property name="text">
                 <string>CALPUFF Output Format?</string>
                </property>
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QPushButton" name="pushButton_22">
+              <widget class="QPushButton" name="NO2_Convert_To_CSV">
                <property name="text">
                 <string>Convert to CSV</string>
                </property>
@@ -686,23 +634,23 @@
               <number>7</number>
              </property>
              <item row="0" column="2">
-              <widget class="QPushButton" name="pushButton_23">
+              <widget class="QPushButton" name="NO2_Process_CSV_Browse">
                <property name="text">
                 <string>Browse</string>
                </property>
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QPushButton" name="pushButton_24">
+              <widget class="QPushButton" name="NO2_Background_Browse">
                <property name="text">
                 <string>Browse</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEdit_24"/>
+              <widget class="QLineEdit" name="NO2_Background_File"/>
              </item>
-             <item row="0" column="0">
+             <item row="0" column="0" alignment="Qt::AlignHCenter">
               <widget class="QLabel" name="label_26">
                <property name="text">
                 <string>File name of CSV to process:</string>
@@ -710,7 +658,7 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QLineEdit" name="lineEdit_19">
+              <widget class="QLineEdit" name="NO2_Initial_Percent">
                <property name="text">
                 <string>0.1</string>
                </property>
@@ -723,7 +671,7 @@
                </property>
               </widget>
              </item>
-             <item row="1" column="0">
+             <item row="1" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
               <widget class="QLabel" name="label_21">
                <property name="text">
                 <string>File name of Background NO2 CSV:</string>
@@ -738,10 +686,10 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLineEdit" name="lineEdit_23"/>
+              <widget class="QLineEdit" name="NO2_Process_CSV"/>
              </item>
              <item row="3" column="1">
-              <widget class="QLineEdit" name="lineEdit_20">
+              <widget class="QLineEdit" name="NO2_Exceedances">
                <property name="text">
                 <string>246</string>
                </property>
@@ -762,17 +710,17 @@
               </widget>
              </item>
              <item row="4" column="1">
-              <widget class="QLineEdit" name="lineEdit_25">
+              <widget class="QLineEdit" name="NO2_Header_Columns">
                <property name="text">
                 <string>3</string>
                </property>
               </widget>
              </item>
              <item row="5" column="1">
-              <widget class="QLineEdit" name="lineEdit_26"/>
+              <widget class="QLineEdit" name="NO2_Output_Statistics"/>
              </item>
              <item row="5" column="2">
-              <widget class="QPushButton" name="pushButton_25">
+              <widget class="QPushButton" name="NO2_Run_Stats">
                <property name="text">
                 <string>Process CSV</string>
                </property>
@@ -789,32 +737,6 @@
            </item>
           </layout>
          </widget>
-        </item>
-        <item row="1" column="0">
-         <spacer name="verticalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="1">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
