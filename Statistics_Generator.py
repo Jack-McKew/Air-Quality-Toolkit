@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from PyQt5.QtWidgets import QMessageBox
+from PyQt_AirQualityToolkit import ErrorBox
 
 """
 .. module:: Statistics_Generator
@@ -11,16 +12,6 @@ from PyQt5.QtWidgets import QMessageBox
 
 
 """
-
-def ErrorBox(errortext,console_error):
-    msg = QMessageBox()
-    msg.setIcon(QMessageBox.Critical)
-    msg.setText(errortext)
-    msg.setWindowTitle("Error")
-    msg.setInformativeText("Please review input settings")
-    msg.setDetailedText("Error from console: \n" + console_error)
-    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-    msg.exec_()
 
 def InfoBox(text,log):
     msg = QMessageBox()

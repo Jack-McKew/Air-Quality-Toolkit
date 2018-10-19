@@ -352,12 +352,12 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Air Quality Toolkit - 19/10/18"))
         self.groupBox.setTitle(_translate("MainWindow", "Statistics Tools"))
         self.label_4.setText(_translate("MainWindow", "Settings for Statistics"))
         self.Stat_Max.setText(_translate("MainWindow", "Max of Sensor"))

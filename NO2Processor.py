@@ -1,7 +1,8 @@
 import os
 import pandas as pd
+import traceback
 from PyQt5.QtWidgets import QMessageBox
-
+from DialogBoxes import ErrorBox, InfoBox
 """
 .. module:: NO2Processor
     :platform: Windows
@@ -12,24 +13,9 @@ from PyQt5.QtWidgets import QMessageBox
 
 """
 
-def ErrorBox(errortext,console_error):
-    msg = QMessageBox()
-    msg.setIcon(QMessageBox.Critical)
-    msg.setText(errortext)
-    msg.setWindowTitle("Error")
-    msg.setInformativeText("Please review input settings")
-    msg.setDetailedText("Error from console: \n" + console_error)
-    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-    msg.exec_()
 
-def InfoBox(text,log):
-    msg = QMessageBox()
-    msg.setIcon(QMessageBox.Information)
-    msg.setText(text)
-    msg.setWindowTitle("Complete")
-    msg.setDetailedText(log)
-    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-    msg.exec_()
+
+
 
 
 def process(header_length,initial,exceedance,background_name,input_data,output_filename):
@@ -111,8 +97,11 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
             InfoBox("Complete","Processing complete, file name is: " + new_name)
 
     except OSError as err:
-        ErrorBox("File Not Found","File not found, please specify CSV and/or Background NO2 CSV\n" + str(err))
+        err = traceback.format_exc()
+        ErrorBox("File Not Found","File not found, please specify CSV and/or Background NO2 CSV",err)
     except ValueError as err:
-        ErrorBox("Invalid Dataset","Invalid dataset, please check input datasets\n" + str(err))
+        err = traceback.format_exc()
+        ErrorBox("Invalid Dataset","Invalid dataset, please check input datasets",err)
     except Exception as err:
-        ErrorBox("Error",str(err))
+        err = traceback.format_exc()
+        ErrorBox("Error","An error has occured",err)

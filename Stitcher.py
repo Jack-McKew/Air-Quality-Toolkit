@@ -1,6 +1,8 @@
 import os
 import pandas as pd
+import traceback
 from PyQt5.QtWidgets import QMessageBox
+from DialogBoxes import ErrorBox,InfoBox
 
 """
 .. module:: Stitcher
@@ -11,24 +13,7 @@ from PyQt5.QtWidgets import QMessageBox
 
 
 """
-def ErrorBox(errortext,console_error):
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Critical)
-            msg.setText(errortext)
-            msg.setWindowTitle("Error")
-            msg.setInformativeText("Please review input settings")
-            msg.setDetailedText("Error from console: \n" + console_error)
-            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-            msg.exec_()
 
-def InfoBox(text,log):
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setText(text)
-            msg.setWindowTitle("Complete")
-            msg.setDetailedText(log)
-            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-            msg.exec_()
 
 def Stitcher(filepath_list,filename,scale,headers_list,output_filename):
     """This function sums multiple dataframes together and outputs a csv of the result.
@@ -76,17 +61,22 @@ def Stitcher(filepath_list,filename,scale,headers_list,output_filename):
             else:
                 dataout.update(dataout.iloc[:,headlen:].add(data.iloc[:,headlen:]))
             del data
-        except:
-            ErrorBox("File Not Found","File not found, please specify file \nFile not found: " + filename)
+        except Exception as err:
+            err = traceback.format_exc()
+            ErrorBox("File Not Found","File not found, please specify file \nFile not found: " + filename,err)
     try:
         dataout.to_csv(output_filename)
         print("Complete: File Path " + str(output_filename))
         InfoBox("Complete","File Path: " + str(output_filename))
     except FileNotFoundError as err:
-        ErrorBox("Output Data File","Invalid output dataset filename, please specify output dataset name \n" + str(err))
+        err = traceback.format_exc()
+        ErrorBox("Output Data File","Invalid output dataset filename, please specify output dataset name",err)
     except UnboundLocalError as err:
-        ErrorBox("Output Data Empty","Output dataset empty, please check input datasets\n" + str(err))
+        err = traceback.format_exc()
+        ErrorBox("Output Data Empty","Output dataset empty, please check input datasets", err)
     except OSError as err:
-        ErrorBox("Output Data Name","Invalid output dataset filename, please specify output dataset name\n" + str(err))
+        err = traceback.format_exc()
+        ErrorBox("Output Data Name","Invalid output dataset filename, please specify output dataset name", err)
     except Exception as err:
-        ErrorBox("Error",str(err))
+        err = traceback.format_exc()
+        ErrorBox("Error","An error has occured",err)

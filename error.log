@@ -1,0 +1,32 @@
+2018-10-19 08:17:40 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 507, in Stat_Browse_Clicked
+    self.Stat_To_Convert.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 507, in Stat_Browse_Clicked
+    self.Stat_To_Convert.setText(filename[0])
+IndexError: list index out of range
+2018-10-19 08:17:49 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 68, in Stitcher
+    dataout.to_csv(output_filename)
+UnboundLocalError: local variable 'dataout' referenced before assignment
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 68, in Stitcher
+    dataout.to_csv(output_filename)
+UnboundLocalError: local variable 'dataout' referenced before assignment
+2018-10-19 08:18:24 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 507, in Stat_Browse_Clicked
+    self.Stat_To_Convert.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 507, in Stat_Browse_Clicked
+    self.Stat_To_Convert.setText(filename[0])
+IndexError: list index out of range
+2018-10-19 08:18:34 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 68, in Stitcher
+    dataout.to_csv(output_filename)
+UnboundLocalError: local variable 'dataout' referenced before assignment
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 68, in Stitcher
+    dataout.to_csv(output_filename)
+UnboundLocalError: local variable 'dataout' referenced before assignment

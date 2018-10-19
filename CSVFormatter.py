@@ -1,7 +1,10 @@
 import os
 import csv
 import pandas as pd
+import traceback
 from PyQt5.QtWidgets import QMessageBox
+from DialogBoxes import ErrorBox,InfoBox
+
 """
 .. module:: CSVFormatter
     :platform: Windows
@@ -12,15 +15,6 @@ from PyQt5.QtWidgets import QMessageBox
 
 """
 
-def ErrorBox(errortext,console_error):
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Critical)
-            msg.setText(errortext)
-            msg.setWindowTitle("Error")
-            msg.setInformativeText("Please review input settings")
-            msg.setDetailedText("Error from console: \n" + console_error)
-            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-            msg.exec_()
 
 def csvformatter(filename,olm_state,output_filename):
     """This function formats dataset outputs from air quality modelling software to CSV format.
@@ -59,12 +53,16 @@ def csvformatter(filename,olm_state,output_filename):
             txt_file = filename
             in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
             if "Output" in next(in_txt)[0]:
-                ErrorBox("Possibly OLM Format","Please ensure this file has no header information")
+                InfoBox("Possibly OLM Format","Please ensure this file has no header information")
             else:
                 out_csv = csv.writer(open(outpath, 'w'))
                 out_csv.writerows(in_txt)
     except OSError as err:
-        ErrorBox("File Not Found","File not found, please specify file to format \n" + str(err))
+        err = traceback.format_exc()
+        ErrorBox("File Not Found","File not found, please specify file to format", err)
+    except Exception as err:
+        err = traceback.format_exc()
+        ErrorBox("Error","An error has occured",err)
 
 
 
