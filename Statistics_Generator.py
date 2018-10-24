@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from PyQt5.QtWidgets import QMessageBox
-from PyQt_AirQualityToolkit import ErrorBox
+from DialogBoxes import ErrorBox,InfoBox
 
 """
 .. module:: Statistics_Generator

@@ -371,7 +371,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Air Quality Toolkit - 19/10/18"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Air Quality Toolkit - 25/10/18"))
         self.groupBox.setTitle(_translate("MainWindow", "Statistics Tools"))
         self.label_4.setText(_translate("MainWindow", "Settings for Statistics"))
         self.Stat_Max.setText(_translate("MainWindow", "Max of Sensor"))
@@ -709,6 +709,7 @@ class Ui_MainWindow(object):
             except Exception as err:
                 err = traceback.format_exc()
                 ErrorBox("Error","An error has occured",err)
+        InfoBox("Complete","Please find files located in their corresponding output location (output file name column)")
 
 ### NO2 PROCESSOR FUNCTIONS
     def NO2_Browse_Format_CSV_Clicked(self):
@@ -727,6 +728,7 @@ class Ui_MainWindow(object):
     def NO2_Convert_To_CSV_Clicked(self):
         try:
             csvformatter(self.NO2_File_To_Format.text(),self.NO2_Calpuff_Format.isChecked(),self.NO2_Output_Format.text())
+            InfoBox("Complete","Please find output file located: " + self.NO2_Output_Format.text())
         except Exception as err:
             err = traceback.format_exc()
             ErrorBox("Error","An error has occured",err)

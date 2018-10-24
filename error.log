@@ -30,3 +30,155 @@ Traceback (most recent call last):
   File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 68, in Stitcher
     dataout.to_csv(output_filename)
 UnboundLocalError: local variable 'dataout' referenced before assignment
+2018-10-19 16:10:15 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:10:25 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:10:27 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:10:27 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:10:27 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:10:28 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:10:28 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:10:28 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split()[0])+1):
+ValueError: invalid literal for int() with base 10: '1.1'
+2018-10-19 16:11:54 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t
+2018-10-19 16:11:57 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t
+2018-10-19 16:11:58 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t8.68872066251043\t7.45566426149263\t3.43260513546913\t3.15584048895156\t2.86340274149151\t2.40001154268483\t3.53759076736452\t4.32015773536855\t2.53038275005405\t1.40493979367578\t1.9710262744931
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t8.68872066251043\t7.45566426149263\t3.43260513546913\t3.15584048895156\t2.86340274149151\t2.40001154268483\t3.53759076736452\t4.32015773536855\t2.53038275005405\t1.40493979367578\t1.9710262744931
+2018-10-19 16:11:58 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t36.686007837295\t23.5985354085081\t10.6721235693146\t8.92770953178202\t7.25258805714748\t6.6939172794571\t12.1598273785318\t12.7751405419831\t6.96130712540032\t5.15663158967925\t4.45332013127695\
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t36.686007837295\t23.5985354085081\t10.6721235693146\t8.92770953178202\t7.25258805714748\t6.6939172794571\t12.1598273785318\t12.7751405419831\t6.96130712540032\t5.15663158967925\t4.45332013127695\
+2018-10-19 16:11:58 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t35.6053632886692\t23.53768740535\t10.2036684910323\t8.82346906768722\t7.06177273938572\t6.04194433486663\t10.7184304097158\t12.1330307023425\t5.8315200959041\t3.47862386719503\t4.22132336195378\t
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t35.6053632886692\t23.53768740535\t10.2036684910323\t8.82346906768722\t7.06177273938572\t6.04194433486663\t10.7184304097158\t12.1330307023425\t5.8315200959041\t3.47862386719503\t4.22132336195378\t
+2018-10-19 16:11:59 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t32.0463257589282\t21.4730147763465\t10.8574121633492\t9.30747970285209\t8.08884365146408\t6.8167499439302\t11.4040634003793\t12.8875160115082\t7.17987285225836\t4.2551957204524\t4.86569750607804\
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t32.0463257589282\t21.4730147763465\t10.8574121633492\t9.30747970285209\t8.08884365146408\t6.8167499439302\t11.4040634003793\t12.8875160115082\t7.17987285225836\t4.2551957204524\t4.86569750607804\
+2018-10-19 16:11:59 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t0.0733967033433326\t0.0488946786142671\t0\t0.0674954295894246\t0.0209613788275071\t0.0234301970819387\t0.0474155599197733\t0.091762824804204\t0\t0\t0.0397490608839341\t0.025117724765966\t0\t0\t0.
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t0.0733967033433326\t0.0488946786142671\t0\t0.0674954295894246\t0.0209613788275071\t0.0234301970819387\t0.0474155599197733\t0.091762824804204\t0\t0\t0.0397490608839341\t0.025117724765966\t0\t0\t0.
+2018-10-19 16:11:59 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t30.6672620601615\t23.8571916226252\t18.9722908895325\t15.372605389099\t13.6274422236063\t12.5815695573273\t15.4803701913283\t17.2639994013579\t11.2847410810828\t8.19273996316356\t8.36061572372422
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 41, in csvformatter
+    for recepternum in range(1,int(line.split(":")[-1])+1):
+ValueError: invalid literal for int() with base 10: '00\t30.6672620601615\t23.8571916226252\t18.9722908895325\t15.372605389099\t13.6274422236063\t12.5815695573273\t15.4803701913283\t17.2639994013579\t11.2847410810828\t8.19273996316356\t8.36061572372422
+2018-10-25 09:19:23 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 54, in csvformatter
+    in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+FileNotFoundError: [Errno 2] No such file or directory: 'Receptor_timeseries_BlockB_Stack1-2_NOx.txt'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 54, in csvformatter
+    in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+FileNotFoundError: [Errno 2] No such file or directory: 'Receptor_timeseries_BlockB_Stack1-2_NOx.txt'
+2018-10-25 09:19:25 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 54, in csvformatter
+    in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+FileNotFoundError: [Errno 2] No such file or directory: 'Receptor_timeseries_BlockB_Stack1-2_NOx - Copy.txt'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 54, in csvformatter
+    in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+FileNotFoundError: [Errno 2] No such file or directory: 'Receptor_timeseries_BlockB_Stack1-2_NOx - Copy.txt'
+2018-10-25 09:19:29 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 54, in csvformatter
+    in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+FileNotFoundError: [Errno 2] No such file or directory: 'Receptor_timeseries_BlockB_Stack1-2_NOx - Copy (2).txt'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 54, in csvformatter
+    in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+FileNotFoundError: [Errno 2] No such file or directory: 'Receptor_timeseries_BlockB_Stack1-2_NOx - Copy (2).txt'

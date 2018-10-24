@@ -1,7 +1,7 @@
 import os
 import csv
 import pandas as pd
-from tkinter import messagebox
+from DialogBoxes import ErrorBox,InfoBox
 """
 .. module:: Factorizer
     :platform: Windows
@@ -23,15 +23,16 @@ def factorizer(dataset_filename,factor_filename,output_filename):
     :type output_filename: str.
 
     """
-    factor_filepath = os.path.join(os.getcwd(),factor_filename)
+    factor_filepath = factor_filename
     factor_df = pd.read_csv(factor_filepath)
-    dataset_filepath = os.path.join(os.getcwd(),dataset_filename)
+    dataset_filepath = dataset_filename
     data_df = pd.read_csv(dataset_filepath)
     data_df['factor'] = factor_df.iloc[:,2]
     output_df = data_df.iloc[:,2:].apply(calcrow,axis=1)
     output_df = pd.concat([factor_df.iloc[:,:2],output_df,data_df.iloc[:,-1]],axis=1)
     output_df.columns = data_df.columns
-    output_df.iloc[:,:-1].to_csv(os.path.join(os.getcwd(),output_filename),index=False)
+    output_df.iloc[:,:-1].to_csv(output_filename,index=False)
+    InfoBox("Complete","Please find output file located: \n" + output_filename)
 
 def calcrow(row):
     """This function is used for multiplying entire pandas dataframe single row by scalar value located in the last column of the dataframe.

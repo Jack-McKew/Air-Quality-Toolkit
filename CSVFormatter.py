@@ -30,7 +30,7 @@ def csvformatter(filename,olm_state,output_filename):
     try:
         outpath = os.path.join(os.getcwd(),output_filename)
         csv_file = outpath
-        if(olm_state):
+        if(olm_state == 1):
             location_output_filename = os.path.splitext(output_filename)[0] + "_Locations.csv"
             loc_csv = csv.writer(open(location_output_filename, 'w',newline=''))
             out_csv = csv.writer(open(outpath,'w',newline=''))
@@ -55,7 +55,7 @@ def csvformatter(filename,olm_state,output_filename):
             if "Output" in next(in_txt)[0]:
                 InfoBox("Possibly OLM Format","Please ensure this file has no header information")
             else:
-                out_csv = csv.writer(open(outpath, 'w'))
+                out_csv = csv.writer(open(outpath, 'w',newline=''))
                 out_csv.writerows(in_txt)
     except OSError as err:
         err = traceback.format_exc()
