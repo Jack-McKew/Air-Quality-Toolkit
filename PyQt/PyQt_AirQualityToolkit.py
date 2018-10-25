@@ -689,12 +689,13 @@ class Ui_MainWindow(object):
     def MassCSV_Browse_Clicked(self):
         try:
             options = QFileDialog.Options()
-            filename,_ = QFileDialog.getOpenFileNames(None,"DAT File to Process","","Dat Files (*.dat);;All Files (*);", options=options)
+            filename,_ = QFileDialog.getOpenFileNames(None,"DAT File to Process","","Dat Files (*.dat);;Txt Files (*.txt);;All Files (*);", options=options)
             for row in range(self.MassCSV_Table.rowCount()):
                 if self.MassCSV_Table.item(row,0) == None and row == self.MassCSV_Table.rowCount() - 1:
                     self.MassCSV_Table.insertRow(row)
                 if self.MassCSV_Table.item(row,0) == None:
                     self.MassCSV_Table.setItem(row,0,QTableWidgetItem(filename[0]))
+                    self.MassCSV_Table.setItem(row,2,QTableWidgetItem(filename[0].split('.')[0] + "_Formatted.csv"))
                     break
         except IndexError as err:
             err = traceback.format_exc()

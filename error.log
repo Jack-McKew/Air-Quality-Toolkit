@@ -237,3 +237,157 @@ NoneType: None
 2018-10-25 09:59:26 ERROR    Expecting data set size of (8759, 125) 
  Received: (3287, 10)
 NoneType: None
+2018-10-26 08:46:32 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 698, in MassCSV_Browse_Clicked
+    self.MassCSV_Table.setItem(row,2,QTableWidgetItem(filename.split('.')[0] + "_Formatted.csv"))
+AttributeError: 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 698, in MassCSV_Browse_Clicked
+    self.MassCSV_Table.setItem(row,2,QTableWidgetItem(filename.split('.')[0] + "_Formatted.csv"))
+AttributeError: 'list' object has no attribute 'split'
+2018-10-26 08:47:12 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1790, in _validate_key
+    error()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1785, in error
+    axis=self.obj._get_axis_name(axis)))
+KeyError: 'the label [Filename] is not in the [columns]'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 714, in MassCSV_Import_Clicked
+    for filename,calpuff,row in zip(settings.loc[:,'Filename'],settings.loc[:,'XY Included'],range(len(settings.loc[:,'Filename']))):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 870, in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 998, in _getitem_lowerdim
+    section = self._getitem_axis(key, axis=i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1911, in _getitem_axis
+    self._validate_key(key, axis)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1798, in _validate_key
+    error()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1785, in error
+    axis=self.obj._get_axis_name(axis)))
+KeyError: 'the label [Filename] is not in the [columns]'
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1790, in _validate_key
+    error()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1785, in error
+    axis=self.obj._get_axis_name(axis)))
+KeyError: 'the label [Filename] is not in the [columns]'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 714, in MassCSV_Import_Clicked
+    for filename,calpuff,row in zip(settings.loc[:,'Filename'],settings.loc[:,'XY Included'],range(len(settings.loc[:,'Filename']))):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 870, in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 998, in _getitem_lowerdim
+    section = self._getitem_axis(key, axis=i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1911, in _getitem_axis
+    self._validate_key(key, axis)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1798, in _validate_key
+    error()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1785, in error
+    axis=self.obj._get_axis_name(axis)))
+KeyError: 'the label [Filename] is not in the [columns]'
+2018-10-26 08:49:25 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 58, in csvformatter
+    in_txt = csv.read(open(txt_file,"r"))
+AttributeError: module 'csv' has no attribute 'read'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 58, in csvformatter
+    in_txt = csv.read(open(txt_file,"r"))
+AttributeError: module 'csv' has no attribute 'read'
+2018-10-26 08:49:27 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 58, in csvformatter
+    in_txt = csv.read(open(txt_file,"r"))
+AttributeError: module 'csv' has no attribute 'read'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 58, in csvformatter
+    in_txt = csv.read(open(txt_file,"r"))
+AttributeError: module 'csv' has no attribute 'read'
+2018-10-26 08:54:22 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 59, in csvformatter
+    delimter = sniffer.sniff(in_txt)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 182, in sniff
+    self._guess_quote_and_delimiter(sample, delimiters)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 223, in _guess_quote_and_delimiter
+    matches = regexp.findall(data)
+TypeError: expected string or bytes-like object
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 59, in csvformatter
+    delimter = sniffer.sniff(in_txt)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 182, in sniff
+    self._guess_quote_and_delimiter(sample, delimiters)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 223, in _guess_quote_and_delimiter
+    matches = regexp.findall(data)
+TypeError: expected string or bytes-like object
+2018-10-26 08:54:29 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 59, in csvformatter
+    delimter = sniffer.sniff(in_txt)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 182, in sniff
+    self._guess_quote_and_delimiter(sample, delimiters)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 223, in _guess_quote_and_delimiter
+    matches = regexp.findall(data)
+TypeError: expected string or bytes-like object
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 59, in csvformatter
+    delimter = sniffer.sniff(in_txt)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 182, in sniff
+    self._guess_quote_and_delimiter(sample, delimiters)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\csv.py", line 223, in _guess_quote_and_delimiter
+    matches = regexp.findall(data)
+TypeError: expected string or bytes-like object
+2018-10-26 08:55:24 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 697, in MassCSV_Browse_Clicked
+    self.MassCSV_Table.setItem(row,0,QTableWidgetItem(filename[0]))
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 697, in MassCSV_Browse_Clicked
+    self.MassCSV_Table.setItem(row,0,QTableWidgetItem(filename[0]))
+IndexError: list index out of range
+2018-10-26 08:55:48 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    in_txt = csv.reader(open(txt_file,"r"),delimiter=delimter)
+TypeError: "delimiter" must be string, not type
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    in_txt = csv.reader(open(txt_file,"r"),delimiter=delimter)
+TypeError: "delimiter" must be string, not type
+2018-10-26 09:14:05 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    test_csv = csv.reader(open(out_csv),"r")
+TypeError: expected str, bytes or os.PathLike object, not _csv.writer
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    test_csv = csv.reader(open(out_csv),"r")
+TypeError: expected str, bytes or os.PathLike object, not _csv.writer
+2018-10-26 09:14:46 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    test_csv = csv.reader(open(outpath),"r")
+_csv.Error: unknown dialect
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    test_csv = csv.reader(open(outpath),"r")
+_csv.Error: unknown dialect
+2018-10-26 09:18:35 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 58, in csvformatter
+    if(delimquestion == QMessageBox.Yes):
+UnboundLocalError: local variable 'delimquestion' referenced before assignment
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 58, in csvformatter
+    if(delimquestion == QMessageBox.Yes):
+UnboundLocalError: local variable 'delimquestion' referenced before assignment
+2018-10-26 09:28:12 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    out_csv = csv.writer(open(outpath, 'w',newline=''))
+PermissionError: [Errno 13] Permission denied: 'U:/Git Version Control/Test Datasets/TSERIES_MEBR_24HR_CONC_C_Formatted.csv'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
+    out_csv = csv.writer(open(outpath, 'w',newline=''))
+PermissionError: [Errno 13] Permission denied: 'U:/Git Version Control/Test Datasets/TSERIES_MEBR_24HR_CONC_C_Formatted.csv'

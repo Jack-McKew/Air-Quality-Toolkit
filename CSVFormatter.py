@@ -34,7 +34,7 @@ def csvformatter(filename,calpuff_state,output_filename):
             location_output_filename = os.path.splitext(output_filename)[0] + "_Locations.csv"
             loc_csv = csv.writer(open(location_output_filename, 'w',newline=''))
             out_csv = csv.writer(open(outpath,'w',newline=''))
-            for i,line in enumerate(open(os.path.join(os.getcwd(),filename))):
+            for i,line in enumerate(open(filename)):
                 if i == 3:
                     out_header = ['YYYY','JDY','HHMM']
                     loc_header = ["X or Y"]
@@ -52,9 +52,18 @@ def csvformatter(filename,calpuff_state,output_filename):
         else:
             txt_file = filename
             in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+            delimquestion = 0
             if "Output" in next(in_txt)[0]:
                 InfoBox("Possibly OLM Format","Please ensure this file has no header information")
+                delimquestion = QMessageBox.question(None,'Tab Delimited File?',"Is the input file Tab Delimited?", QMessageBox.Yes | QMessageBox.No)
+            if(delimquestion == QMessageBox.Yes or delimquestion != 0):
+                in_txt = csv.reader(open(txt_file,"r"),delimiter='\t')
+                out_csv = csv.writer(open(outpath, 'w',newline=''))
+                out_csv.writerows(in_txt)
             else:
+                sniffer = csv.Sniffer()
+                delimter = sniffer.sniff(next(in_txt)[0])
+                in_txt = csv.reader(open(txt_file,"r"),delimiter=delimter.delimiter)
                 out_csv = csv.writer(open(outpath, 'w',newline=''))
                 out_csv.writerows(in_txt)
     except OSError as err:
