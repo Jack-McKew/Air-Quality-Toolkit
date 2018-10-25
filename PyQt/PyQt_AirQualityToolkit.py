@@ -212,16 +212,19 @@ class Ui_MainWindow(object):
         self.gridLayout_18.setObjectName("gridLayout_18")
         self.Factorizer_Import = QtWidgets.QPushButton(self.tab_3)
         self.Factorizer_Import.setObjectName("Factorizer_Import")
-        self.gridLayout_18.addWidget(self.Factorizer_Import, 0, 1, 1, 1)
+        self.gridLayout_18.addWidget(self.Factorizer_Import, 0, 2, 1, 1)
         self.Factorizer_Clear = QtWidgets.QPushButton(self.tab_3)
         self.Factorizer_Clear.setObjectName("Factorizer_Clear")
-        self.gridLayout_18.addWidget(self.Factorizer_Clear, 0, 2, 1, 1)
+        self.gridLayout_18.addWidget(self.Factorizer_Clear, 0, 3, 1, 1)
         self.Factorizer_Run = QtWidgets.QPushButton(self.tab_3)
         self.Factorizer_Run.setObjectName("Factorizer_Run")
-        self.gridLayout_18.addWidget(self.Factorizer_Run, 0, 3, 1, 1)
-        self.Factorizer_Browse = QtWidgets.QPushButton(self.tab_3)
-        self.Factorizer_Browse.setObjectName("Factorizer_Browse")
-        self.gridLayout_18.addWidget(self.Factorizer_Browse, 0, 0, 1, 1)
+        self.gridLayout_18.addWidget(self.Factorizer_Run, 0, 4, 1, 1)
+        self.Factorizer_Browse_Input = QtWidgets.QPushButton(self.tab_3)
+        self.Factorizer_Browse_Input.setObjectName("Factorizer_Browse_Input")
+        self.gridLayout_18.addWidget(self.Factorizer_Browse_Input, 0, 0, 1, 1)
+        self.Factorizer_Browse_Factor = QtWidgets.QPushButton(self.tab_3)
+        self.Factorizer_Browse_Factor.setObjectName("Factorizer_Browse_Factor")
+        self.gridLayout_18.addWidget(self.Factorizer_Browse_Factor, 0, 1, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout_18)
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_7 = QtWidgets.QWidget()
@@ -415,7 +418,8 @@ class Ui_MainWindow(object):
         self.Factorizer_Import.setText(_translate("MainWindow", "Import Settings CSV"))
         self.Factorizer_Clear.setText(_translate("MainWindow", "Clear"))
         self.Factorizer_Run.setText(_translate("MainWindow", "Factorize"))
-        self.Factorizer_Browse.setText(_translate("MainWindow", "Browse"))
+        self.Factorizer_Browse_Input.setText(_translate("MainWindow", "Browse Input File"))
+        self.Factorizer_Browse_Factor.setText(_translate("MainWindow", "Browse Factor File"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Factorizer"))
         item = self.MassCSV_Table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "File Name"))
@@ -462,7 +466,8 @@ class Ui_MainWindow(object):
         self.Stitcher_Run.clicked.connect(self.Stitcher_Run_Clicked)
 
         #FACTORIZER BUTTONS
-        self.Factorizer_Browse.clicked.connect(self.Factorizer_Browse_Clicked)
+        self.Factorizer_Browse_Input.clicked.connect(self.Factorizer_Browse_Input_Clicked)
+        self.Factorizer_Browse_Factor.clicked.connect(self.Factorizer_Browse_Factor_Clicked)
         self.Factorizer_Import.clicked.connect(self.Factorizer_Import_Clicked)
         self.Factorizer_Clear.clicked.connect(self.Factorizer_Clear_Clicked)
         self.Factorizer_Run.clicked.connect(self.Factorizer_Run_Clicked)
@@ -584,18 +589,24 @@ class Ui_MainWindow(object):
 
     def Stitcher_Clear_Clicked(self):
         self.Stitcher_Table.clearContents()
+        self.Stitcher_Out_Folder.clear()
 
     def Stitcher_Run_Clicked(self):
         filesp = []
         filesl = []
         scalesl = []
         headers = []
-        for row in self.Get_Table(self.Stitcher_Table):
-            if row:
-                filesp.append(row[0])
-                filesl.append(row[1])
-                scalesl.append(row[2])
-                headers.append(row[3])
+        try:
+            for row in self.Get_Table(self.Stitcher_Table):
+                if row:
+                    filesp.append(row[0])
+                    filesl.append(row[1])
+                    scalesl.append(row[2])
+                    headers.append(row[3])
+        except IndexError as err:
+            ErrorBox("Invalid Settings","Invalid settings, please review input table for errors",err)
+        except Exception as err:
+            ErrorBox("Error","An error has occured",err)
         try:
             Stitcher(filesp,filesl,scalesl,headers,os.path.join(self.Stitcher_Out_Folder.text(),self.Stitcher_Out_File.text()))
         except TypeError as error:
@@ -606,7 +617,7 @@ class Ui_MainWindow(object):
             ErrorBox("Error","An error has occured",err)
 
 #### FACTORIZER FUNCTIONS
-    def Factorizer_Browse_Clicked(self):
+    def Factorizer_Browse_Input_Clicked(self):
         try:
             options = QFileDialog.Options()
             filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
@@ -615,6 +626,24 @@ class Ui_MainWindow(object):
                     self.Factorizer_Table.insertRow(row)
                 if self.Factorizer_Table.item(row,0) == None:
                     self.Factorizer_Table.setItem(row,0,QTableWidgetItem(filename[0]))
+                    self.Factorizer_Table.setItem(row,2,QTableWidgetItem(filename[0].split(".")[0] + "_Factorized.csv"))
+                    break
+        except IndexError as err:
+            err = traceback.format_exc()
+            ErrorBox("No File Selected","Please select a file",err)
+        except Exception as err:
+            err = traceback.format_exc()
+            ErrorBox("Error","An error has occured",err)
+
+    def Factorizer_Browse_Factor_Clicked(self):
+        try:
+            options = QFileDialog.Options()
+            filename,_ = QFileDialog.getOpenFileNames(None,"CSV File to Process","","CSV Files (*.csv);;All Files (*);", options=options)
+            for row in range(self.Factorizer_Table.rowCount()):
+                if self.Factorizer_Table.item(row,1) == None and row == self.Factorizer_Table.rowCount() - 1:
+                    self.Factorizer_Table.insertRow(row)
+                if self.Factorizer_Table.item(row,1) == None:
+                    self.Factorizer_Table.setItem(row,1,QTableWidgetItem(filename[0]))
                     break
         except IndexError as err:
             err = traceback.format_exc()

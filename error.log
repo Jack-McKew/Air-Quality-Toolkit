@@ -182,3 +182,58 @@ Traceback (most recent call last):
   File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 54, in csvformatter
     in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
 FileNotFoundError: [Errno 2] No such file or directory: 'Receptor_timeseries_BlockB_Stack1-2_NOx - Copy (2).txt'
+2018-10-25 09:26:24 ERROR    list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 598, in Stitcher_Run_Clicked
+    scalesl.append(row[2])
+IndexError: list index out of range
+2018-10-25 09:26:27 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 68, in Stitcher
+    dataout.to_csv(output_filename)
+UnboundLocalError: local variable 'dataout' referenced before assignment
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 68, in Stitcher
+    dataout.to_csv(output_filename)
+UnboundLocalError: local variable 'dataout' referenced before assignment
+2018-10-25 09:31:30 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 69, in Stitcher
+    dataout.to_csv(output_filename)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 69, in Stitcher
+    dataout.to_csv(output_filename)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+2018-10-25 09:32:01 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 69, in Stitcher
+    dataout.to_csv(output_filename)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 69, in Stitcher
+    dataout.to_csv(output_filename)
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+2018-10-25 09:36:11 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 62, in Stitcher
+    if(dataout.shape != data.shape()):
+TypeError: 'tuple' object is not callable
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 62, in Stitcher
+    if(dataout.shape != data.shape()):
+TypeError: 'tuple' object is not callable
+2018-10-25 09:36:49 ERROR    Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 63, in Stitcher
+    ErrorBox("Datasets Size Error","Please review data sets size (eg missing hour or day)",err)
+UnboundLocalError: local variable 'err' referenced before assignment
+Traceback (most recent call last):
+  File "U:\Git Version Control\Air-Quality-Toolkit\Stitcher.py", line 63, in Stitcher
+    ErrorBox("Datasets Size Error","Please review data sets size (eg missing hour or day)",err)
+UnboundLocalError: local variable 'err' referenced before assignment
+2018-10-25 09:38:08 ERROR    
+NoneType: None
+2018-10-25 09:40:08 ERROR    
+NoneType: None
+2018-10-25 09:41:33 ERROR    Expecting data set size of (8759, 125) 
+ Received: (365, 3291)
+NoneType: None
+2018-10-25 09:59:26 ERROR    Expecting data set size of (8759, 125) 
+ Received: (3287, 10)
+NoneType: None

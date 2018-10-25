@@ -8,21 +8,14 @@
 \PassOptionsToPackage{warn}{textcomp}
 \usepackage[utf8]{inputenc}
 \ifdefined\DeclareUnicodeCharacter
- \ifdefined\DeclareUnicodeCharacterAsOptional
-  \DeclareUnicodeCharacter{"00A0}{\nobreakspace}
-  \DeclareUnicodeCharacter{"2500}{\sphinxunichar{2500}}
-  \DeclareUnicodeCharacter{"2502}{\sphinxunichar{2502}}
-  \DeclareUnicodeCharacter{"2514}{\sphinxunichar{2514}}
-  \DeclareUnicodeCharacter{"251C}{\sphinxunichar{251C}}
-  \DeclareUnicodeCharacter{"2572}{\textbackslash}
- \else
-  \DeclareUnicodeCharacter{00A0}{\nobreakspace}
-  \DeclareUnicodeCharacter{2500}{\sphinxunichar{2500}}
-  \DeclareUnicodeCharacter{2502}{\sphinxunichar{2502}}
-  \DeclareUnicodeCharacter{2514}{\sphinxunichar{2514}}
-  \DeclareUnicodeCharacter{251C}{\sphinxunichar{251C}}
-  \DeclareUnicodeCharacter{2572}{\textbackslash}
- \fi
+% support both utf8 and utf8x syntaxes
+\edef\sphinxdqmaybe{\ifdefined\DeclareUnicodeCharacterAsOptional\string"\fi}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe00A0}{\nobreakspace}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2500}{\sphinxunichar{2500}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2502}{\sphinxunichar{2502}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2514}{\sphinxunichar{2514}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe251C}{\sphinxunichar{251C}}
+  \DeclareUnicodeCharacter{\sphinxdqmaybe2572}{\textbackslash}
 \fi
 \usepackage{cmap}
 \usepackage[T1]{fontenc}
@@ -32,6 +25,7 @@
 \usepackage[Bjarne]{fncychap}
 \usepackage{sphinx}
 
+\fvset{fontsize=\small}
 \usepackage{geometry}
 
 % Include hyperref last.
@@ -48,6 +42,9 @@
 
 \addto\captionsenglish{\renewcommand{\literalblockcontinuedname}{continued from previous page}}
 \addto\captionsenglish{\renewcommand{\literalblockcontinuesname}{continues on next page}}
+\addto\captionsenglish{\renewcommand{\sphinxnonalphabeticalgroupname}{Non-alphabetical}}
+\addto\captionsenglish{\renewcommand{\sphinxsymbolsname}{Symbols}}
+\addto\captionsenglish{\renewcommand{\sphinxnumbersname}{Numbers}}
 
 \addto\extrasenglish{\def\pageautorefname{page}}
 
@@ -56,23 +53,25 @@
 
 
 \title{Air Quality Toolkit Documentation}
-\date{Oct 05, 2018}
+\date{Oct 25, 2018}
 \release{1}
 \author{Jack McKew}
 \newcommand{\sphinxlogo}{\vbox{}}
 \renewcommand{\releasename}{Release}
 \makeindex
-
 \begin{document}
 
+\pagestyle{empty}
 \maketitle
+\pagestyle{plain}
 \sphinxtableofcontents
+\pagestyle{normal}
 \phantomsection\label{\detokenize{index::doc}}
 
 
 
 \chapter{Stitcher}
-\label{\detokenize{index:stitcher}}\label{\detokenize{index:welcome-to-air-quality-toolkit-s-documentation}}\label{\detokenize{index:module-Stitcher}}\index{Stitcher (module)}\index{Stitcher() (in module Stitcher)}
+\label{\detokenize{index:module-Stitcher}}\label{\detokenize{index:stitcher}}\index{Stitcher (module)}\index{Stitcher() (in module Stitcher)}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{index:Stitcher.Stitcher}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{Stitcher.}}\sphinxbfcode{\sphinxupquote{Stitcher}}}{\emph{filepath\_list}, \emph{filename}, \emph{scale}, \emph{headers\_list}, \emph{output\_filename}}{}
@@ -103,10 +102,10 @@ This function sums multiple dataframes together and outputs a csv of the result.
 
 
 \chapter{CSV Formatter}
-\label{\detokenize{index:csv-formatter}}\label{\detokenize{index:module-CSVFormatter}}\index{CSVFormatter (module)}\index{csvformatter() (in module CSVFormatter)}
+\label{\detokenize{index:module-CSVFormatter}}\label{\detokenize{index:csv-formatter}}\index{CSVFormatter (module)}\index{csvformatter() (in module CSVFormatter)}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{index:CSVFormatter.csvformatter}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{CSVFormatter.}}\sphinxbfcode{\sphinxupquote{csvformatter}}}{\emph{filename}, \emph{olm\_state}, \emph{output\_filename}}{}
+\phantomsection\label{\detokenize{index:CSVFormatter.csvformatter}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{CSVFormatter.}}\sphinxbfcode{\sphinxupquote{csvformatter}}}{\emph{filename}, \emph{calpuff\_state}, \emph{output\_filename}}{}
 This function formats dataset outputs from air quality modelling software to CSV format.
 \begin{quote}\begin{description}
 \item[{Parameters}] \leavevmode\begin{itemize}
@@ -114,7 +113,7 @@ This function formats dataset outputs from air quality modelling software to CSV
 \sphinxstyleliteralstrong{\sphinxupquote{filename}} (\sphinxstyleliteralemphasis{\sphinxupquote{str.}}) \textendash{} This should be a string of the filename to convert to CSV.
 
 \item {} 
-\sphinxstyleliteralstrong{\sphinxupquote{olm\_state}} (\sphinxstyleliteralemphasis{\sphinxupquote{bool.}}) \textendash{} This should be a boolean value specifying if the file is OLM format (x and y information header).
+\sphinxstyleliteralstrong{\sphinxupquote{calpuff\_state}} (\sphinxstyleliteralemphasis{\sphinxupquote{bool.}}) \textendash{} This should be a boolean value specifying if the file is CALPUFF format (x and y information header).
 
 \item {} 
 \sphinxstyleliteralstrong{\sphinxupquote{output\_filename}} (\sphinxstyleliteralemphasis{\sphinxupquote{str.}}) \textendash{} Output filename.
@@ -169,7 +168,7 @@ This function mutiplies air quality datasets with vectors given.
 
 
 \chapter{NO2Processor}
-\label{\detokenize{index:no2processor}}\label{\detokenize{index:module-NO2Processor}}\index{NO2Processor (module)}\index{process() (in module NO2Processor)}
+\label{\detokenize{index:module-NO2Processor}}\label{\detokenize{index:no2processor}}\index{NO2Processor (module)}\index{process() (in module NO2Processor)}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{index:NO2Processor.process}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{NO2Processor.}}\sphinxbfcode{\sphinxupquote{process}}}{\emph{header\_length}, \emph{initial}, \emph{exceedance}, \emph{background\_name}, \emph{input\_data}, \emph{output\_filename}}{}
@@ -232,19 +231,19 @@ This function generates statistics on given input datasets.
 
 \renewcommand{\indexname}{Python Module Index}
 \begin{sphinxtheindex}
-\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+\let\bigletter\sphinxstyleindexlettergroup
 \bigletter{c}
-\item {\sphinxstyleindexentry{CSVFormatter}}\sphinxstyleindexpageref{index:\detokenize{module-CSVFormatter}}
+\item\relax\sphinxstyleindexentry{CSVFormatter}\sphinxstyleindexpageref{index:\detokenize{module-CSVFormatter}}
 \indexspace
 \bigletter{f}
-\item {\sphinxstyleindexentry{Factorizer}}\sphinxstyleindexpageref{index:\detokenize{module-Factorizer}}
+\item\relax\sphinxstyleindexentry{Factorizer}\sphinxstyleindexpageref{index:\detokenize{module-Factorizer}}
 \indexspace
 \bigletter{n}
-\item {\sphinxstyleindexentry{NO2Processor}}\sphinxstyleindexpageref{index:\detokenize{module-NO2Processor}}
+\item\relax\sphinxstyleindexentry{NO2Processor}\sphinxstyleindexpageref{index:\detokenize{module-NO2Processor}}
 \indexspace
 \bigletter{s}
-\item {\sphinxstyleindexentry{Statistics\_Generator}}\sphinxstyleindexpageref{index:\detokenize{module-Statistics_Generator}}
-\item {\sphinxstyleindexentry{Stitcher}}\sphinxstyleindexpageref{index:\detokenize{module-Stitcher}}
+\item\relax\sphinxstyleindexentry{Statistics\_Generator}\sphinxstyleindexpageref{index:\detokenize{module-Statistics_Generator}}
+\item\relax\sphinxstyleindexentry{Stitcher}\sphinxstyleindexpageref{index:\detokenize{module-Stitcher}}
 \end{sphinxtheindex}
 
 \renewcommand{\indexname}{Index}

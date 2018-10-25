@@ -59,7 +59,10 @@ def Stitcher(filepath_list,filename,scale,headers_list,output_filename):
                 dataout = data
                 x += 1
             else:
-                dataout.update(dataout.iloc[:,headlen:].add(data.iloc[:,headlen:]))
+                if(dataout.shape != data.shape):
+                    ErrorBox("Datasets Size Error","Please review data set (" + filename + ") size (eg missing hour or day)","Expecting data set size of " + str(dataout.shape) + " \n Received: " + str(data.shape))
+                else:
+                    dataout.update(dataout.iloc[:,headlen:].add(data.iloc[:,headlen:]))
             del data
         except Exception as err:
             err = traceback.format_exc()

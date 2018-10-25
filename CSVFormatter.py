@@ -16,13 +16,13 @@ from DialogBoxes import ErrorBox,InfoBox
 """
 
 
-def csvformatter(filename,olm_state,output_filename):
+def csvformatter(filename,calpuff_state,output_filename):
     """This function formats dataset outputs from air quality modelling software to CSV format.
 
     :param filename: This should be a string of the filename to convert to CSV.
     :type filename: str.
-    :param olm_state: This should be a boolean value specifying if the file is OLM format (x and y information header).
-    :type olm_state: bool.
+    :param calpuff_state: This should be a boolean value specifying if the file is CALPUFF format (x and y information header).
+    :type calpuff_state: bool.
     :param output_filename: Output filename.
     :type output_filename: str.
 
@@ -30,7 +30,7 @@ def csvformatter(filename,olm_state,output_filename):
     try:
         outpath = os.path.join(os.getcwd(),output_filename)
         csv_file = outpath
-        if(olm_state == 1):
+        if(calpuff_state == 1):
             location_output_filename = os.path.splitext(output_filename)[0] + "_Locations.csv"
             loc_csv = csv.writer(open(location_output_filename, 'w',newline=''))
             out_csv = csv.writer(open(outpath,'w',newline=''))
