@@ -28,6 +28,7 @@ def csvformatter(filename,calpuff_state,output_filename):
 
     """
     try:
+        calpuff_state = int(calpuff_state)
         outpath = os.path.join(os.getcwd(),output_filename)
         csv_file = outpath
         if(calpuff_state == 1):

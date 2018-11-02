@@ -374,7 +374,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Air Quality Toolkit - 25/10/18"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Air Quality Toolkit - 1/11/18"))
         self.groupBox.setTitle(_translate("MainWindow", "Statistics Tools"))
         self.label_4.setText(_translate("MainWindow", "Settings for Statistics"))
         self.Stat_Max.setText(_translate("MainWindow", "Max of Sensor"))

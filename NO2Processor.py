@@ -48,12 +48,11 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
         data = pd.concat(temp_list)
         del temp_list
         data['background'] = list(map(lambda x: float(x*0.9583333),background['Ozone']))
-
         data = data.fillna(0)
         def olmfunction(row):
             back = float(row[-1])
             new_row = []
-            for value in row[header_length:-1]:
+            for value in row[header_length - 1:-1]:
                 value = float(value)*initial + min(0.9*float(value),back)
                 new_row.append(value)
             return pd.Series(new_row)
@@ -61,7 +60,7 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
         def backfunction(row):
             back = float(row[-1])
             new_row = []
-            for value in row[header_length:-1]:
+            for value in row[:-1]:
                 value = value + back
                 new_row.append(value)
             return pd.Series(new_row)
@@ -76,6 +75,7 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
                                 '8 Hour Average of Sensor':data.rolling(window=8).mean().max(),
                                 '8 Hour Max':data.rolling(window=8).mean().max().max()})
         outdf.index.name = 'Sensor ID'
+        outdf.index += 1
         outdf.to_csv(output_filename)
         InfoBox("Complete","Processing complete, file name is: " + output_filename)
         backquestion = QMessageBox.question(None,'Background NO2 Statistics?',"Would you like to process Background NO2 statistics?", QMessageBox.Yes | QMessageBox.No)
@@ -92,6 +92,7 @@ def process(header_length,initial,exceedance,background_name,input_data,output_f
                                 '8 Hour Average of Sensor':data.rolling(window=8).mean().max(),
                                 '8 Hour Max':data.rolling(window=8).mean().max().max()})
             outdf.index.name = 'Sensor ID'
+            outdf.index += 1
             new_name = output_filename.split('.')[0] + "_BG_NO2.csv"
             outdf.to_csv(new_name)
             InfoBox("Complete","Processing complete, file name is: " + new_name)
