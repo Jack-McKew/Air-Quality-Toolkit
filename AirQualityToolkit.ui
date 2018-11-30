@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Air Quality Toolkit - 30/11/18</string>
+   <string>Air Quality Toolkit - 8/11/18</string>
   </property>
   <property name="animated">
    <bool>true</bool>
@@ -286,11 +286,7 @@
             </widget>
            </item>
            <item row="3" column="1">
-            <widget class="QLineEdit" name="Stat_Con_Criteria">
-             <property name="text">
-              <string>5</string>
-             </property>
-            </widget>
+            <widget class="QLineEdit" name="Stat_Con_Criteria"/>
            </item>
            <item row="1" column="0" alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_9">
@@ -305,11 +301,11 @@
            <item row="3" column="0" alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_10">
              <property name="text">
-              <string>Number of rows to output (eg 5)</string>
+              <string>Criteria</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="0" alignment="Qt::AlignHCenter">
+           <item row="4" column="0">
             <widget class="QLabel" name="label_11">
              <property name="text">
               <string>File name of output results</string>
@@ -334,11 +330,7 @@
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QLineEdit" name="Stat_Con_Header_Num">
-             <property name="text">
-              <string>3</string>
-             </property>
-            </widget>
+            <widget class="QLineEdit" name="Stat_Con_Header_Num"/>
            </item>
           </layout>
          </widget>

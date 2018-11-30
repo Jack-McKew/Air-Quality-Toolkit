@@ -1,8 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QDialog, QApplication,QMainWindow
+from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
 from PyQt_AirQualityToolkit import Ui_MainWindow
-
-
 
 class AppWindow(QMainWindow):
     def __init__(self):

@@ -3,7 +3,7 @@ import csv
 import pandas as pd
 import traceback
 from PyQt5.QtWidgets import QMessageBox
-from DialogBoxes import ErrorBox,InfoBox
+from DialogBoxes import ErrorBox, InfoBox
 
 """
 .. module:: CSVFormatter
@@ -15,8 +15,7 @@ from DialogBoxes import ErrorBox,InfoBox
 
 """
 
-
-def csvformatter(filename,calpuff_state,output_filename):
+def csvformatter(filename, calpuff_state, output_filename):
     """This function formats dataset outputs from air quality modelling software to CSV format.
 
     :param filename: This should be a string of the filename to convert to CSV.
@@ -29,17 +28,19 @@ def csvformatter(filename,calpuff_state,output_filename):
     """
     try:
         calpuff_state = int(calpuff_state)
-        outpath = os.path.join(os.getcwd(),output_filename)
+        outpath = os.path.join(os.getcwd(), output_filename)
         csv_file = outpath
-        if(calpuff_state == 1):
-            location_output_filename = os.path.splitext(output_filename)[0] + "_Locations.csv"
-            loc_csv = csv.writer(open(location_output_filename, 'w',newline=''))
-            out_csv = csv.writer(open(outpath,'w',newline=''))
-            for i,line in enumerate(open(filename)):
+        if calpuff_state == 1:
+            location_output_filename = (
+                os.path.splitext(output_filename)[0] + "_Locations.csv"
+            )
+            loc_csv = csv.writer(open(location_output_filename, "w", newline=""))
+            out_csv = csv.writer(open(outpath, "w", newline=""))
+            for i, line in enumerate(open(filename)):
                 if i == 3:
-                    out_header = ['YYYY','JDY','HHMM']
+                    out_header = ["YYYY", "JDY", "HHMM"]
                     loc_header = ["X or Y"]
-                    for recepternum in range(1,int(line.split()[0])+1):
+                    for recepternum in range(1, int(line.split()[0]) + 1):
                         out_header.append(recepternum)
                         loc_header.append(recepternum)
                     loc_csv.writerow(loc_header)
@@ -52,30 +53,35 @@ def csvformatter(filename,calpuff_state,output_filename):
                     out_csv.writerow(row)
         else:
             txt_file = filename
-            in_txt = csv.reader(open(txt_file, "r"), delimiter = '\t')
+            in_txt = csv.reader(open(txt_file, "r"), delimiter="\t")
             delimquestion = 0
             if "Output" in next(in_txt)[0]:
-                InfoBox("Possibly OLM Format","Please ensure this file has no header information")
-                delimquestion = QMessageBox.question(None,'Tab Delimited File?',"Is the input file Tab Delimited?", QMessageBox.Yes | QMessageBox.No)
-            if(delimquestion == QMessageBox.Yes or delimquestion != 0):
-                in_txt = csv.reader(open(txt_file,"r"),delimiter='\t')
-                out_csv = csv.writer(open(outpath, 'w',newline=''))
+                InfoBox(
+                    "Possibly OLM Format",
+                    "Please ensure this file has no header information",
+                )
+                delimquestion = QMessageBox.question(
+                    None,
+                    "Tab Delimited File?",
+                    "Is the input file Tab Delimited?",
+                    QMessageBox.Yes | QMessageBox.No,
+                )
+            if delimquestion == QMessageBox.Yes or delimquestion != 0:
+                in_txt = csv.reader(open(txt_file, "r"), delimiter="\t")
+                out_csv = csv.writer(open(outpath, "w", newline=""))
                 out_csv.writerows(in_txt)
             else:
                 sniffer = csv.Sniffer()
                 delimter = sniffer.sniff(next(in_txt)[0])
-                in_txt = csv.reader(open(txt_file,"r"),delimiter=delimter.delimiter)
-                out_csv = csv.writer(open(outpath, 'w',newline=''))
+                in_txt = csv.reader(open(txt_file, "r"), delimiter=delimter.delimiter)
+                out_csv = csv.writer(open(outpath, "w", newline=""))
                 out_csv.writerows(in_txt)
     except OSError as err:
         err = traceback.format_exc()
-        ErrorBox("File Not Found","File not found, please specify file to format", err)
+        ErrorBox("File Not Found", "File not found, please specify file to format", err)
     except Exception as err:
         err = traceback.format_exc()
-        ErrorBox("Error","An error has occured",err)
-
-
-
+        ErrorBox("Error", "An error has occured", err)
 
 ### DEPRECATED BY NEW CODE
 

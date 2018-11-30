@@ -1,7 +1,8 @@
 import os
 import csv
 import pandas as pd
-from DialogBoxes import ErrorBox,InfoBox
+from DialogBoxes import ErrorBox, InfoBox
+
 """
 .. module:: Factorizer
     :platform: Windows
@@ -12,7 +13,7 @@ from DialogBoxes import ErrorBox,InfoBox
 
 """
 
-def factorizer(dataset_filename,factor_filename,output_filename):
+def factorizer(dataset_filename, factor_filename, output_filename):
     """This function mutiplies air quality datasets with vectors given.
 
     :param dataset_filename: This should be a string of the filename containing the dataset.
@@ -27,12 +28,14 @@ def factorizer(dataset_filename,factor_filename,output_filename):
     factor_df = pd.read_csv(factor_filepath)
     dataset_filepath = dataset_filename
     data_df = pd.read_csv(dataset_filepath)
-    data_df['factor'] = factor_df.iloc[:,2]
-    output_df = data_df.iloc[:,2:].apply(calcrow,axis=1)
-    output_df = pd.concat([factor_df.iloc[:,:2],output_df,data_df.iloc[:,-1]],axis=1)
+    data_df["factor"] = factor_df.iloc[:, 2]
+    output_df = data_df.iloc[:, 2:].apply(calcrow, axis=1)
+    output_df = pd.concat(
+        [factor_df.iloc[:, :2], output_df, data_df.iloc[:, -1]], axis=1
+    )
     output_df.columns = data_df.columns
-    output_df.iloc[:,:-1].to_csv(output_filename,index=False)
-    InfoBox("Complete","Please find output file located: \n" + output_filename)
+    output_df.iloc[:, :-1].to_csv(output_filename, index=False)
+    InfoBox("Complete", "Please find output file located: \n" + output_filename)
 
 def calcrow(row):
     """This function is used for multiplying entire pandas dataframe single row by scalar value located in the last column of the dataframe.
@@ -44,11 +47,9 @@ def calcrow(row):
     factor = float(row[-1])
     new_row = []
     for value in row[:-1]:
-            value = value*factor
-            new_row.append(value)
+        value = value * factor
+        new_row.append(value)
     return pd.Series(new_row)
-
-
 
 ##DEPRECATED BY FACTORIZER
 

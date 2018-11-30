@@ -391,3 +391,1551 @@ Traceback (most recent call last):
   File "U:\Git Version Control\Air-Quality-Toolkit\CSVFormatter.py", line 62, in csvformatter
     out_csv = csv.writer(open(outpath, 'w',newline=''))
 PermissionError: [Errno 13] Permission denied: 'U:/Git Version Control/Test Datasets/TSERIES_MEBR_24HR_CONC_C_Formatted.csv'
+2018-11-08 15:24:37 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 562, in Stat_Browse_Clicked
+    self.Stat_To_Convert.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 562, in Stat_Browse_Clicked
+    self.Stat_To_Convert.setText(filename[0])
+IndexError: list index out of range
+2018-11-09 11:36:05 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 602, in Stat_Con_In_Clicked
+    self.Stat_Con_Input_Name.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 602, in Stat_Con_In_Clicked
+    self.Stat_Con_Input_Name.setText(filename[0])
+IndexError: list index out of range
+2018-11-09 12:47:50 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 617, in Stat_Con_Back_Clicked
+    self.Stat_Con_Back_Name.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 617, in Stat_Con_Back_Clicked
+    self.Stat_Con_Back_Name.setText(filename[0])
+IndexError: list index out of range
+2018-11-30 09:32:48 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 604, in Stat_Con_In_Clicked
+    self.Stat_Con_Input_Name.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt\PyQt_AirQualityToolkit.py", line 604, in Stat_Con_In_Clicked
+    self.Stat_Con_Input_Name.setText(filename[0])
+IndexError: list index out of range
+2018-11-30 09:36:39 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt_AirQualityToolkit.py", line 618, in Stat_Con_Back_Clicked
+    self.Stat_Con_Back_Name.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt_AirQualityToolkit.py", line 618, in Stat_Con_Back_Clicked
+    self.Stat_Con_Back_Name.setText(filename[0])
+IndexError: list index out of range
+2018-11-30 09:36:39 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt_AirQualityToolkit.py", line 618, in Stat_Con_Back_Clicked
+    self.Stat_Con_Back_Name.setText(filename[0])
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\PyQt_AirQualityToolkit.py", line 618, in Stat_Con_Back_Clicked
+    self.Stat_Con_Back_Name.setText(filename[0])
+IndexError: list index out of range
+2018-11-30 10:18:13 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:18:13 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:20:56 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:20:56 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:22:36 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:22:36 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 43, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:23:25 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 46, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 46, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:23:25 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 46, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4243, in set
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 46, in contemporaneous
+    data['background'] = background.iloc[:,header_length:]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3119, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 3195, in _set_item
+    NDFrame._set_item(self, key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2600, in _set_item
+    self._data.set(key, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4246, in set
+    self.insert(len(self.items), item, value)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4347, in insert
+    placement=slice(loc, loc + 1))
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3205, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 125, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 2, placement implies 1
+2018-11-30 10:24:17 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 37, in contemporaneous
+    background = pd.read_csv(input_background)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'' does not exist
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 37, in contemporaneous
+    background = pd.read_csv(input_background)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'' does not exist
+2018-11-30 10:24:17 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 37, in contemporaneous
+    background = pd.read_csv(input_background)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'' does not exist
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 37, in contemporaneous
+    background = pd.read_csv(input_background)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\io\parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'' does not exist
+2018-11-30 10:26:43 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 63, in contemporaneous
+    data = data.apply(olmfunction,axis=1)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6014, in apply
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 142, in get_result
+    return self.apply_standard()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 248, in apply_standard
+    self.apply_series_generator()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 277, in apply_series_generator
+    results[i] = self.f(v)
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in olmfunction
+    value = float(value)*initial + min(0.9*float(value),back)
+NameError: ("name 'initial' is not defined", 'occurred at index 3')
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 63, in contemporaneous
+    data = data.apply(olmfunction,axis=1)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6014, in apply
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 142, in get_result
+    return self.apply_standard()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 248, in apply_standard
+    self.apply_series_generator()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 277, in apply_series_generator
+    results[i] = self.f(v)
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in olmfunction
+    value = float(value)*initial + min(0.9*float(value),back)
+NameError: ("name 'initial' is not defined", 'occurred at index 3')
+2018-11-30 10:26:43 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 63, in contemporaneous
+    data = data.apply(olmfunction,axis=1)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6014, in apply
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 142, in get_result
+    return self.apply_standard()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 248, in apply_standard
+    self.apply_series_generator()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 277, in apply_series_generator
+    results[i] = self.f(v)
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in olmfunction
+    value = float(value)*initial + min(0.9*float(value),back)
+NameError: ("name 'initial' is not defined", 'occurred at index 3')
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 63, in contemporaneous
+    data = data.apply(olmfunction,axis=1)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6014, in apply
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 142, in get_result
+    return self.apply_standard()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 248, in apply_standard
+    self.apply_series_generator()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\apply.py", line 277, in apply_series_generator
+    results[i] = self.f(v)
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in olmfunction
+    value = float(value)*initial + min(0.9*float(value),back)
+NameError: ("name 'initial' is not defined", 'occurred at index 3')
+2018-11-30 10:58:48 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 50, in contemporaneous
+    cols = recep_headers.append(colnum)
+AttributeError: 'range' object has no attribute 'append'
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 50, in contemporaneous
+    cols = recep_headers.append(colnum)
+AttributeError: 'range' object has no attribute 'append'
+2018-11-30 10:58:48 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 50, in contemporaneous
+    cols = recep_headers.append(colnum)
+AttributeError: 'range' object has no attribute 'append'
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 50, in contemporaneous
+    cols = recep_headers.append(colnum)
+AttributeError: 'range' object has no attribute 'append'
+2018-11-30 10:59:44 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 10:59:44 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:00:23 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:00:23 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:02:46 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:02:46 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:03:45 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:03:45 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:04:16 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:04:16 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 222, in _has_valid_tuple
+    self._validate_key(k, i)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1971, in _validate_key
+    "a [{types}]".format(types=self._valid_types))
+ValueError: Can only index by location with a [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 52, in contemporaneous
+    receptor_con = sorted_data.iloc[:,cols]
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 1472, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 2013, in _getitem_tuple
+    self._has_valid_tuple(tup)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexing.py", line 226, in _has_valid_tuple
+    .format(types=self._valid_types))
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+2018-11-30 11:31:11 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con['pred_cumulative'] = receptor_con.iloc[:,0] + receptor_con['background']
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2688, in __getitem__
+    return self._getitem_column(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2695, in _getitem_column
+    return self._get_item_cache(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2489, in _get_item_cache
+    values = self._data.get(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4115, in get
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con['pred_cumulative'] = receptor_con.iloc[:,0] + receptor_con['background']
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2688, in __getitem__
+    return self._getitem_column(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2695, in _getitem_column
+    return self._get_item_cache(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2489, in _get_item_cache
+    values = self._data.get(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4115, in get
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+2018-11-30 11:31:11 ERROR    Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con['pred_cumulative'] = receptor_con.iloc[:,0] + receptor_con['background']
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2688, in __getitem__
+    return self._getitem_column(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2695, in _getitem_column
+    return self._get_item_cache(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2489, in _get_item_cache
+    values = self._data.get(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4115, in get
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+Traceback (most recent call last):
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 51, in contemporaneous
+    receptor_con['pred_cumulative'] = receptor_con.iloc[:,0] + receptor_con['background']
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2688, in __getitem__
+    return self._getitem_column(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 2695, in _getitem_column
+    return self._get_item_cache(key)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\generic.py", line 2489, in _get_item_cache
+    values = self._data.get(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 4115, in get
+    loc = self.items.get_loc(item)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\indexes\base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'background'
+2018-11-30 11:45:39 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result,ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result,ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+2018-11-30 11:45:39 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result,ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result,ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+2018-11-30 11:47:07 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+2018-11-30 11:47:07 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = full_sorted.append(result)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\frame.py", line 6211, in append
+    sort=sort)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+2018-11-30 11:49:06 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = pd.concat([full_sorted,result],ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = pd.concat([full_sorted,result],ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+2018-11-30 11:49:06 ERROR    Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = pd.concat([full_sorted,result],ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
+Traceback (most recent call last):
+  File "u:\Git Version Control\Air-Quality-Toolkit\modules\Contemporaneous.py", line 68, in contemporaneous
+    full_sorted = pd.concat([full_sorted,result],ignore_index=True)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 226, in concat
+    return op.get_result()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\reshape\concat.py", line 423, in get_result
+    copy=self.copy)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 5425, in concatenate_block_managers
+    return BlockManager(blocks, axes)
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3282, in __init__
+    self._verify_integrity()
+  File "C:\Users\McKewJ\Anaconda\envs\AirQualityToolkit\lib\site-packages\pandas\core\internals.py", line 3498, in _verify_integrity
+    len(self.items), tot_items))
+AssertionError: Number of manager items must equal union of block items
+# manager items: 9, # tot_items: 13
